@@ -28,14 +28,14 @@ defaults:
 paginate: 20
 
 #### Site
-title : Jekyll Jacman
-tagline: A fresh looking and responsive theme for Jekyll
+title : Antuan пишет
+tagline: Джекилл-блог
 assets: /assets
 url: https://dvesti.github.io
 baseurl: "/jekyll-jacman"
 
 #### Language
-language: en    ## blog site languages: en, zh-CN, zh-TW, de
+language: ru    ## blog site languages: en, ru, zh-CN, zh-TW, de
 
 #### Menu
 menu:
