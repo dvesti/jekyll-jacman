@@ -4,11 +4,11 @@ tags: Тэги
 tagcloud: Облако Тэгов
 prev: Пред.
 next: След.
-prev-post: 'Пред.: '
-next-post: 'След.: '
+prev-post: '<< Пред. '
+next-post: 'След. >> '
 search-load:  Идёт загрузка. Подождите, пожалуйста...
-comment: Комментарий
-contents: Комментарии
+comment: Комментарии
+contents: Содержание
 archive_a: Архив
 archive_b: "Архив: %s"
 archive_date: "%b %Y"
