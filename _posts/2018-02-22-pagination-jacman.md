@@ -11,8 +11,8 @@ tags: [Blog, Bugs]
 Изменения делал в файле` jekyll-jacman\_includes\index.html`
 Поменял это 
 
-```html
-    {% if paginator.previous_page %}
+
+        {% if paginator.previous_page %}
     <a class="extend prev" rel="prev" href="{{ paginator.previous_page_path }}"><span></span>Prev</a>
     {% endif %}
     {% if paginator.page == 1 %}
@@ -29,13 +29,12 @@ tags: [Blog, Bugs]
     {% endfor %}
      {% if paginator.next_page %}
     <a class="extend next" rel="next" href="{{ paginator.next_page_path }}">Next<span></span></a>
-{% endif %}
-```
+    {% endif %}
+
 
 на это:
 
-```html
-   {% if paginator.previous_page %}
+    {% if paginator.previous_page %}
     <a class="extend prev" rel="prev" href="{{ site.baseurl }}{{ paginator.previous_page_path }}"><span></span>Пред.</a>
     {% endif %}
     {% if paginator.page == 1 %}
@@ -52,6 +51,5 @@ tags: [Blog, Bugs]
     {% endfor %}
      {% if paginator.next_page %}
     <a class="extend next" rel="next" href="{{ site.baseurl }}{{ paginator.next_page_path }}">След.<span></span></a>
-{% endif %}
-```
+    {% endif %}
 
