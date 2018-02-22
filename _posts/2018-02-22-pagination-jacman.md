@@ -15,32 +15,57 @@ tags:
 Меняем это:
 
 ```ruby
+{% raw %} 
+    <nav id="page-nav" class="clearfix{% if site.index.expand != true  %} unexpand{% endif %}">
+  <nav id="page-nav" class="clearfix">
+    {% if paginator.previous_page %}
     <a class="extend prev" rel="prev" href="{{ paginator.previous_page_path }}"><span></span>Prev</a>
-
+    {% endif %}
+    {% if paginator.page == 1 %}
     <span class="page-number current">1</span>
-
+    {% else %}
     <a class="page-number" href="/">1</a>
-
+    {% endif %}
+    {% for i in (2..paginator.total_pages) %}
+    {%if i == paginator.page %}
     <span class="page-number current">{{ i }}</span>
-
+    {% else %}
     <a class="page-number" href="/page{{ i }}">{{ i }}</a>
-
+    {% endif %}
+    {% endfor %}
+     {% if paginator.next_page %}
     <a class="extend next" rel="next" href="{{ paginator.next_page_path }}">Next<span></span></a>
+    {% endif %}
+  </nav>
+  </nav>
+{% endraw %}
 ```
 
 На это:
 
 ```ruby
+{% raw %} 
+<nav id="page-nav" class="clearfix{% if site.index.expand != true  %} unexpand{% endif %}">
+  <nav id="page-nav" class="clearfix">
+    {% if paginator.previous_page %}
     <a class="extend prev" rel="prev" href="{{ site.baseurl }}{{ paginator.previous_page_path }}"><span></span>Пред.</a>
-  
-     <span class="page-number current">1</span>
-
+    {% endif %}
+    {% if paginator.page == 1 %}
+    <span class="page-number current">1</span>
+    {% else %}
     <a class="page-number" href="{{ site.baseurl }}">1</a>
-  
+    {% endif %}
+    {% for i in (2..paginator.total_pages) %}
+    {%if i == paginator.page %}
     <span class="page-number current">{{ i }}</span>
-  
+    {% else %}
     <a class="page-number" href="{{ site.baseurl }}/page{{ i }}">{{ i }}</a>
-  
-    <a class="extend next" rel="next" href="{{ site.baseurl }}{{ paginator.next_page_path }}">След.<span></span></a> 
+    {% endif %}
+    {% endfor %}
+     {% if paginator.next_page %}
+    <a class="extend next" rel="next" href="{{ site.baseurl }}{{ paginator.next_page_path }}">След.<span></span></a>
+    {% endif %}
+  </nav>
+  </nav>
+{% endraw %}
 ```
-
