@@ -2,7 +2,7 @@
 <nav class="article-nav clearfix">
  {% if page.previous %}
  <div class="prev" >
- <a href="{{site.baseurl}}{{ site.rss }}" rel="self"/>{{ page.previous.url }}" title="{{ page.previous.title }}">
+ <a href="{{site.baseurl}}{{ page.previous.url }}" title="{{ page.previous.title }}">
   <strong>{{ lang.prev-post }}</strong><br/>
   <span>
   {% if page.previous.title %}{{ page.previous.title }}{% else %}(no title){% endif %}</span>
