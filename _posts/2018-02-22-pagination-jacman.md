@@ -3,16 +3,11 @@ layout: post
 title: "Фикс для пагинации в теме для Jekyll - jekyll-jacman"  
 date: 2018-02-22 21:21:20 +0200
 categories: News
-tags: [Blog, Bugs]
+tags: 
+- Blog
+- Bugs
 ---
 Итак, тема для **Jekyll - *Jekyll-Jacman***
 Не работала пагинация.
 После того как изменил количество сообщений на страницу - вместо 20 поставил 5 - появилась пагинация, но не с правильными путями
 Изменения делал в файле` jekyll-jacman\_includes\index.html`
-Поменял это 
-
-
-на это:
-
-
-
