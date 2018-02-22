@@ -35,7 +35,7 @@ url: https://dvesti.github.io
 baseurl: "/jekyll-jacman"
 
 #### Language
-language: ru    ## blog site languages: en, ru, zh-CN, zh-TW, de
+language: en    ## blog site languages: en, ru, zh-CN, zh-TW, de
 
 #### Menu
 menu:
