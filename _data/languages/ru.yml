@@ -11,7 +11,7 @@ comment: Комментарии
 contents: Содержание
 archive_a: Архив
 archive_b: "Архив: %s"
-archive_date: "%b %Y"
+archive_date: "%F" ## "%b %Y"
 page: Стр. %d
 recent_posts: Последние сообщения
 menu: Меню
