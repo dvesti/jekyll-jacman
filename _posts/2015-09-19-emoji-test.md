@@ -1,6 +1,6 @@
 ---
-title: Emoji Test
-tags:
+title: Смайлика - Emoji Test
+tags: Test
 ---
 
 This is an emoji test. :smile:

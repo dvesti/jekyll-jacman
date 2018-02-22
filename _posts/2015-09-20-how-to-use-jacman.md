@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 如何使用 Jacman 主题
+title: Конфиг темы - Jekyll-Jacman - 如何使用 Jacman 主题
 tags:
 - Jekyll
 - Jacman
@@ -135,7 +135,7 @@ title: tags (或categories)
 提供了7种小工具。包括标签、分类、RSS、友情链接、微博秀。
 
  **友情链接**：友情链接的网址添加可以在`links`属性下添加。
- 
+
  **微博秀**：需要注意的是，如果要启用微博秀，您必须填上`author`属性下`tsina`和`weibo_verifier`的值，前者是您微博ID，后者是您微博秀的验证码，访问 http://app.weibo.com/tool/weiboshow 在如下图位置，可以获得您的 verifier，如：我的是`b3593ceb`。
 ![](http://ww1.sinaimg.cn/large/81b78497jw1emegd6b0ytj209204pweu.jpg)
 
@@ -204,13 +204,15 @@ title: tags (或categories)
     > 直接新建一个 Markdown 文件，将其`front-matter`修改为如下，即可看到主题为图片类文章提供的样式。
     >
     > ```
-  ---
+    >
+    > ```
+---
   layout: photo
   title: Gallery Post
   photos:
   - http://i.minus.com/ibobbTlfxZgITW.jpg
   - http://i.minus.com/iedpg90Y0exFS.jpg
-  ---
+---
     > ```
 
 - **Q：我在配置文件中给某一项设置了值，但为什么总是看不到效果啊？**
