@@ -1,5 +1,5 @@
 ---
-title: Смайлика - Emoji Test
+title: Смайлики - Emoji Test
 tags: Test
 ---
 
