@@ -38,7 +38,7 @@ tags: [Blog, Bugs]
 
 на это:
 
-```html
+```
 <nav id="page-nav" class="clearfix{% if site.index.expand != true  %} unexpand{% endif %}">
   <nav id="page-nav" class="clearfix">
     {% if paginator.previous_page %}

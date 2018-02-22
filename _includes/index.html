@@ -12,13 +12,13 @@
     <a class="extend prev" rel="prev" href="{{ site.baseurl }}{{ paginator.previous_page_path }}"><span></span>Пред.</a>
     {% endif %}
     {% if paginator.page == 1 %}
-    <span class="page-number current">{{ site.baseurl }}1</span>
+    <span class="page-number current">1</span>
     {% else %}
     <a class="page-number" href="{{ site.baseurl }}/">1</a>
     {% endif %}
     {% for i in (2..paginator.total_pages) %}
     {%if i == paginator.page %}
-    <span class="page-number current">{{ site.baseurl }}{{ i }}</span>
+    <span class="page-number current">{{ i }}</span>
     {% else %}
     <a class="page-number" href="{{ site.baseurl }}/page{{ i }}">{{ i }}</a>
     {% endif %}
