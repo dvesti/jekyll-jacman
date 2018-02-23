@@ -15,3 +15,4 @@ tags:
 
 Секрет в тэгах {`%raw%`} и {`%endraw%`}.  
 Код с **хтмл** и *руби* и ***всего***, что есть в файле надо обрамить ими - и всё! :smile:   
+**P.S.** [Полезная ссылка](https://jekyllrb.com/docs/templates/#code-snippet-highlighting) по теме
