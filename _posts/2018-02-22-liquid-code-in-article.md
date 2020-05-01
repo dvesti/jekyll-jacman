@@ -10,7 +10,7 @@ tags:
 Писал статью.  2020-05-01  
 Указал код. Всё красиво с подцветкой, но...  
 Не отобразился и вообще чепуха произошла.  
-По-гуглил. Нашёл [это решение](https://www.juev.org/2012/07/06/jekyll-liquid-code-in-article/)  
+По-гуглил. Нашёл [это решение](https://www.juev.org/2012/07/05/jekyll-liquid-code-in-article/)  
 В [предыдущей статье](https://dvesti.github.io/jekyll-jacman/news/2018/02/22/pagination-jacman/) получилось всё-таки сделать как надо  
 
 Секрет в тэгах {`%raw%`} и {`%endraw%`}.  
