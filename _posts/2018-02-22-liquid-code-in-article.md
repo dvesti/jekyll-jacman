@@ -6,6 +6,7 @@ categories: News
 tags: 
 - Blog
 - Bugs
+excerpt_separator: <!--more-->
 ---
 Писал статью.  (*test-проверка: 2020-05-01*)  
 Указал код. Всё красиво с подцветкой, но...  
@@ -14,5 +15,14 @@ tags:
 В [предыдущей статье](https://dvesti.github.io/jekyll-jacman/news/2018/02/22/pagination-jacman/) получилось всё-таки сделать как надо  
 
 Секрет в тэгах {`%raw%`} и {`%endraw%`}.  
-Код с **хтмл** и *руби* и ***всего***, что есть в файле надо обрамить ими - и всё! :smile:
-**P.S.** [Полезная ссылка](https://jekyllrb.com/docs/templates/#code-snippet-highlighting) по теме
+<!--more-->
+
+Код с **хтмл** и *руби* и ***всего***, что есть в файле надо обрамить ими - и всё! :smile:  
+**P.S.** [Полезная ссылка](https://jekyllrb.com/docs/templates/#code-snippet-highlighting) по теме  
+
+**Обновлено: 2020-05-03**    
+Следует использовать эти тэги:  
+`{{"{%raw"}}%}` -- открывающийся    
+и    
+`{{"{%endraw"}}%}` -- закрывающийся
+
