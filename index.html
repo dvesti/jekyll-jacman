@@ -1,10 +1,11 @@
 ---
 layout: default
-excerpt_separator: <!--more-->
 ---
 
 {% include index.html %}
 
-{% if post.excerpt != post.content %}
-    <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
+{% if post.content contains '<!--more-->' %}
+    {{ post.content | split:'<!--more-->' | first }}
+{% else %}
+    <!-- Case for when no excerpt is defined -->
 {% endif %}
