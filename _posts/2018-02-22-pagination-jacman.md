@@ -6,15 +6,14 @@ categories: News
 tags: 
 - Blog
 - Bugs
+excerpt_separator: <!--more-->
 ---
 Итак, тема для **Jekyll - *Jekyll-Jacman***
 Не работала пагинация.
 После того как изменил количество сообщений на страницу - вместо 20 поставил 5 - появилась пагинация, но не с правильными путями
 
-<!--more-->
-
 Изменения делал в файле`jekyll-jacman\_includes\index.html`
-
+<!--more-->
 Меняем это:
 
 ```ruby
