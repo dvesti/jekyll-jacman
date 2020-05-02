@@ -14,5 +14,5 @@ tags:
 В [предыдущей статье](https://dvesti.github.io/jekyll-jacman/news/2018/02/22/pagination-jacman/) получилось всё-таки сделать как надо  
 
 Секрет в тэгах {`%raw%`} и {`%endraw%`}.  
-Код с **хтмл** и *руби* и ***всего***, что есть в файле надо обрамить ими - и всё! :smile:   
+Код с **хтмл** и *руби* и ***всего***, что есть в файле надо обрамить ими - и всё! :smile:
 **P.S.** [Полезная ссылка](https://jekyllrb.com/docs/templates/#code-snippet-highlighting) по теме

@@ -19,7 +19,7 @@ excerpt_separator: <!--more-->
 Меняем это:
 
 ```ruby
-{% raw %} 
+{% raw %}
     <nav id="page-nav" class="clearfix{% if site.index.expand != true  %} unexpand{% endif %}">
   <nav id="page-nav" class="clearfix">
     {% if paginator.previous_page %}
@@ -48,7 +48,7 @@ excerpt_separator: <!--more-->
 На это:
 
 ```ruby
-{% raw %} 
+{% raw %}
 <nav id="page-nav" class="clearfix{% if site.index.expand != true  %} unexpand{% endif %}">
   <nav id="page-nav" class="clearfix">
     {% if paginator.previous_page %}
