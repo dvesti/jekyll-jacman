@@ -80,6 +80,7 @@ index:
   expand: true   ## default is unexpanding,so you can only see the short description of each post.
   excerpt_link: Читать дальше
   # excerpt_separator: <!-- more -->
+  excerpt_separator: "\n\n"
 
 close_aside: false  #close sidebar in post page if true
 mathjax: true      #enable mathjax if true
