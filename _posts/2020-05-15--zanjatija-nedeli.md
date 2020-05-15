@@ -2,9 +2,10 @@
 layout: post  
 title: "Мысли за неделю № 20"  
 date: 2020-05-15 15:49:20 +0200
-categories: News, Мысли за неделю
+categories: mysli-za-nedelju
 tags: 
 - Blog
+- mysli-za-nedelju
 excerpt_separator: <!--more-->
 ---
 
