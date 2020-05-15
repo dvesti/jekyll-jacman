@@ -1,7 +1,7 @@
 ---
 layout: post  
 title: "Мысли за неделю"  
-date: 2020-05-15 18:49:20 +0200
+date: 2020-05-15 15:49:20 +0200
 categories: News
 tags: 
 - Blog
