@@ -5,6 +5,7 @@ date: 2020-05-15 15:49:20 +0200
 categories: News
 tags: 
 - Blog
+excerpt_separator: <!--more-->
 ---
 
 Целую неделю занимался не пойми чем.  
