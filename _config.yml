@@ -32,7 +32,7 @@ title : Antuan nuwem
 tagline: Джекил-блог
 assets: /assets
 url: tallinna.ru
-baseurl: "/"
+baseurl: ""
 
 #### Language
 language: ru    ## blog site languages: en, ru, zh-CN, zh-TW, de
