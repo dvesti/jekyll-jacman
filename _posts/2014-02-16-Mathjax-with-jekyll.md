@@ -1,6 +1,6 @@
 ---
 layout: post
-title: " Математичские формулы - MathJax with Jekyll"
+title: "Математические формулы - MathJax with Jekyll"
 date: 2014-02-16
 categories: Options
 tags: [Resources, Jekyll, Test]
