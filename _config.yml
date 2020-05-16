@@ -31,7 +31,7 @@ paginate: 5
 title : Antuan nuwem
 tagline: Джекил-блог
 assets: /assets
-url: tallinna.ru
+url: https://dvesti.github.io
 baseurl: "/jekyll-jacman"
 
 #### Language
