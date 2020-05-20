@@ -2,7 +2,7 @@
 layout: post
 title: Первое сообщение блога!
 date: 2018-02-19 19:47:20 +0200
-categories: News
+categories: Jekyll
 tags: Blog
 ---
 
