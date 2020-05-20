@@ -1,6 +1,6 @@
 ---
 layout: post  
-title: "Jekyll работает, Hugo -- нет"  
+title: "Jekyll работает, Hugo - нет"  
 date: 2020-05-20 15:01:20 +0200
 categories: News
 tags: 
