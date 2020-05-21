@@ -21,6 +21,7 @@ excerpt_separator: <!--more-->
 
 ```html  
 <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
   ```  
 
 * В файле *css* (у нас это -- `/assets/css/style.css`) добавляем название шрифта. Должно выглядеть так:  
