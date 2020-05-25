@@ -10,18 +10,15 @@ image: http://gastonsanchez.com/images/blog/mathjax_logo.png
 One of the rewards of switching my website to [Jekyll](http://jekyllrb.com/) is the
 ability to support **MathJax**, which means I can write LaTeX-like equations that get
 nicely displayed in a web browser, like this one \\( \sqrt{\frac{n!}{k!(n-k)!}} \\) or
-this one \\( x^2 + y^2 = r^2 \\).
-
+this one \\( x^2 + y^2 = r^2 \\).  
 <!--more-->
+![](img class="centered" src="https://www.mathjax.org/badge/mj-logo.svg")  
 
-<img class="centered" src="https://www.mathjax.org/badge/mj-logo.svg" />
-
-### What's MathJax?
+### What's MathJax
 
 If you check MathJax website [(www.mathjax.org)](http://www.mathjax.org/) you'll see
 that it *is an open source JavaScript display engine for mathematics that works in all
 browsers*.
-
 
 ### How to implement MathJax with Jekyll
 
@@ -42,7 +39,6 @@ To load the MathJax javascript, I added the following lines in my layout ```page
 {% endhighlight %}
 
 Of course you can choose a different file location in your jekyll layouts.
-
 
 ### A Couple of Examples
 
@@ -69,7 +65,6 @@ $$a^2 + b^2 = c^2$$
 
 To display inline math use ```\\( ... \\)``` like this ```\\( sin(x^2) \\)``` which gets
 rendered as \\( sin(x^2) \\)
-
 
 Here's another example using type ```\mathsf```
 
