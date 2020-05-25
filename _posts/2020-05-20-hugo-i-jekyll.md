@@ -2,10 +2,14 @@
 layout: post  
 title: "Jekyll работает, Hugo - нет"  
 date: 2020-05-20 15:01:20 +0200
-categories: News
+categories: Web
 tags: 
-- Blog
+- Hugo
 - GitHub
+- Jekyll
+- Git
+- VS Code
+- WSL
 excerpt_separator: <!--more-->
 ---
 

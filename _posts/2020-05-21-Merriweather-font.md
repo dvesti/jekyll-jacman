@@ -2,9 +2,10 @@
 layout: post  
 title: "Шрифт Merriweather"  
 date: 2020-05-21 10:01:20 +0200
-categories: News
+categories: Jekyll
 tags: 
-- Blog
+- Font
+- Hack
 excerpt_separator: <!--more-->
 ---
 

@@ -4,7 +4,11 @@ title: "Мысли за неделю № 20"
 date: 2020-05-15 15:49:20 +0200
 categories: News
 tags: 
-- Blog
+- Hugo
+- GitHub
+- Jekyll
+- Gatsby
+- VS Code
 excerpt_separator: <!--more-->
 ---
 
