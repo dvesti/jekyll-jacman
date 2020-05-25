@@ -4,7 +4,8 @@ title: "Математические формулы - MathJax with Jekyll"
 date: 2014-02-16
 categories: Options
 tags: [Resources, Jekyll, Test]
-image: http://gastonsanchez.com/images/blog/mathjax_logo.png
+#image: http://gastonsanchez.com/images/blog/mathjax_logo.png
+image: https://dwglogo.com/wp-content/uploads/2017/11/MathJax_logo-741x486.png
 ---
 
 One of the rewards of switching my website to [Jekyll](http://jekyllrb.com/) is the
