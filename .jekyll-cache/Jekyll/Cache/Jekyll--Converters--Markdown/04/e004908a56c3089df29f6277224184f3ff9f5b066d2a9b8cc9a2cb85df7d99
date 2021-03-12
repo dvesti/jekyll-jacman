@@ -1,0 +1,13 @@
+I"�<p>Обновим своё имя и прочие настройки в файле -  <code>_config.yml</code> . Восклицательный (!), наверно, читать дальше. А дальше картинка</p>
+
+<p><img src="/assets/images/2018/config.png" alt="_config.yml" /></p>
+
+<p>The easiest way to make your first post is to edit this one. Go into <code>/_posts/</code> and update the Hello World markdown file. For more instructions head over to the <a href="https://github.com/dvesti/jekyll">Jekyll Now repository</a> on GitHub.</p>
+
+<pre><code class="language-ruby">def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=&gt; prints 'Hi, Tom' to STDOUT.
+</code></pre>
+:ET
