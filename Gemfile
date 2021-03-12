@@ -10,7 +10,7 @@ gem "github-pages", group: :jekyll_plugins
 gem "jekyll-paginate"
 gem "jemoji"
 gem "wdm", ">= 0.1.0" if Gem.win_platform?
-gem "i18n"
+gem "i18n", "1.8.9"
 gem "json", "2.5.1"
 
 group :jekyll_plugins do
