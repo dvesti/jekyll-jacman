@@ -181,5 +181,5 @@ plugins:
  - jemoji
  - jekyll-paginate
  - i18n
- - github-pages
+ #- github-pages
  
