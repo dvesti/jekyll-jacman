@@ -1,5 +1,0 @@
-I"<p>Начинает проясняться, почему не удавалось делать деплой <code class="language-plaintext highlighter-rouge">deploy</code> (закидывать новые файлы на сервер) с генератором статических страниц <strong>Hugo</strong>.</p>
-
-<p>Как и писал раньше: я использую <strong>VS Code</strong>, а также установлена подсистема <strong>Windows для Linux (WSL)</strong>.<br />
-С <strong>Git</strong>-ом и <strong>GitHub</strong>-ом работаю через <code class="language-plaintext highlighter-rouge">bash.exe</code>, который стал <code class="language-plaintext highlighter-rouge">wsl.exe</code>.</p>
-:ET

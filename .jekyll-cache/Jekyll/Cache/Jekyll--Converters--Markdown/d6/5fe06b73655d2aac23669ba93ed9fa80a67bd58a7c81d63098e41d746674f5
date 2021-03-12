@@ -1,5 +1,4 @@
-I";
-<p>Давно приглядывался к шрифту <em>Merriweather</em>.<br />
+I"z<p>Давно приглядывался к шрифту <em>Merriweather</em>.<br />
 А вчера прочитал, что он – один из самых популярный в Интернете.<br />
 По крайней мере, на новостных сайтах и блогах. И это – справедливо: читается хорошо, выглядит приятно, как латиница, так и кириллица.<br />
 <!--more-->
@@ -7,23 +6,23 @@
 
 <ul>
   <li>
-    <p>Выбрать из предложенных вариантов нужный и нажать на <code class="language-plaintext highlighter-rouge">+Select this style</code>.</p>
+    <p>Выбрать из предложенных вариантов нужный и нажать на <code>+Select this style</code>.</p>
   </li>
-  <li>В появившейся правой колонке нажимаем на <code class="language-plaintext highlighter-rouge">Embed</code>.</li>
-  <li>Вставляем в <em>html</em> страницу между <code class="language-plaintext highlighter-rouge">&lt;head&gt;...&lt;/head&gt;</code> следующий код (в нашей теме <code class="language-plaintext highlighter-rouge">Jekyll-Jacman</code> это в файле <code class="language-plaintext highlighter-rouge">/_includes/_partial/head.html</code>):</li>
+  <li>В появившейся правой колонке нажимаем на <code>Embed</code>.</li>
+  <li>Вставляем в <em>html</em> страницу между <code>&lt;head&gt;...&lt;/head&gt;</code> следующий код (в нашей теме <code>Jekyll-Jacman</code> это в файле <code>/_includes/_partial/head.html</code>):</li>
 </ul>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https://fonts.googleapis.com/css2?family=Merriweather&amp;display=swap"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+<pre><code class="language-html">&lt;link href="https://fonts.googleapis.com/css2?family=Merriweather&amp;display=swap" rel="stylesheet"&gt;
 
-</code></pre></div></div>
+</code></pre>
 
 <ul>
-  <li>В файле <em>css</em> (у нас это – <code class="language-plaintext highlighter-rouge">/assets/css/style.css</code>) добавляем название шрифта. Должно выглядеть так:</li>
+  <li>В файле <em>css</em> (у нас это – <code>/assets/css/style.css</code>) добавляем название шрифта. Должно выглядеть так:</li>
 </ul>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">font-family</span><span class="o">:</span>
-  <span class="s2">'Merriweather'</span><span class="o">,</span> <span class="nt">serif</span><span class="o">;</span>
-</code></pre></div></div>
+<pre><code class="language-css">font-family:
+  'Merriweather', serif;
+</code></pre>
 
 <ul>
   <li>

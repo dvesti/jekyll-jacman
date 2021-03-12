@@ -1,4 +1,4 @@
-I"�<p><img src="https://tallinna.ru/assets/images/2020/wallbase.jpg" alt="Tallinna" /></p>
+I"�<p><img src="https://tallinna.ru/assets/images/2020/wallbase.jpg" alt="Tallinna" /></p>
 
 <p>В конфиге переписал, чтобы <em>«читать дальше»</em> был после первого параграфа.
 На старых это работает.<br />
@@ -9,7 +9,7 @@
 
 <h2 id="подсветка-javascript">Подсветка JavaScript</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```javascript
+<pre><code>```javascript
 function sayHello(name) {
   if (!name) {
     console.log('Hello World');
@@ -18,68 +18,68 @@ function sayHello(name) {
   }
 }
 ```
-</code></pre></div></div>
+</code></pre>
 
 <h3 id="результат">Результат:</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hello </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<pre><code class="language-javascript">function sayHello(name) {
+  if (!name) {
+    console.log('Hello World');
+  } else {
+    console.log(`Hello ${name}`);
+  }
+}
+</code></pre>
 
 <h2 id="examples">Examples</h2>
 
 <h3 id="code">Code</h3>
 
-<p>Academic supports a Markdown extension for highlighting code syntax. You can enable this feature by toggling the <code class="language-plaintext highlighter-rouge">highlight</code> option in your <code class="language-plaintext highlighter-rouge">config/_default/params.toml</code> file.</p>
+<p>Academic supports a Markdown extension for highlighting code syntax. You can enable this feature by toggling the <code>highlight</code> option in your <code>config/_default/params.toml</code> file.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```python
+<pre><code>```python
 import pandas as pd
 data = pd.read_csv("data.csv")
 data.head()
 ```
-</code></pre></div></div>
+</code></pre>
 
 <p>renders as</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"data.csv"</span><span class="p">)</span>
-<span class="n">data</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
-</code></pre></div></div>
+<pre><code class="language-python">import pandas as pd
+data = pd.read_csv("data.csv")
+data.head()
+</code></pre>
 
 <h3 id="math">Math</h3>
 
-<p>Academic supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the <code class="language-plaintext highlighter-rouge">math</code> option in your <code class="language-plaintext highlighter-rouge">config/_default/params.toml</code> file.</p>
+<p>Academic supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the <code>math</code> option in your <code>config/_default/params.toml</code> file.</p>
 
-<p>To render <em>inline</em> or <em>block</em> math, wrap your LaTeX math with <code class="language-plaintext highlighter-rouge">$...$</code> or <code class="language-plaintext highlighter-rouge">$$...$$</code>, respectively.</p>
+<p>To render <em>inline</em> or <em>block</em> math, wrap your LaTeX math with <code>$...$</code> or <code>$$...$$</code>, respectively.</p>
 
 <p>Example <strong>math block</strong>:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```tex
+<pre><code>```tex
 $$\gamma_{n} = \frac{ 
 \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
 \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
 {\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
 ```
-</code></pre></div></div>
+</code></pre>
 
 <p>renders as</p>
 
 \[\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}\]
 
-<p>Example <strong>inline math</strong> <code class="language-plaintext highlighter-rouge">$\nabla F(\mathbf{x}_{n})$</code> renders as $\nabla F(\mathbf{x}_{n})$.</p>
+<p>Example <strong>inline math</strong> <code>$\nabla F(\mathbf{x}_{n})$</code> renders as $\nabla F(\mathbf{x}_{n})$.</p>
 
-<p>Example <strong>multi-line math</strong> using the <code class="language-plaintext highlighter-rouge">\\\\</code> math linebreak:</p>
+<p>Example <strong>multi-line math</strong> using the <code>\\\\</code> math linebreak:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```tex
+<pre><code>```tex
 $$f(k;p_0^*) = \begin{cases} p_0^* &amp; \text{if }k=1, \\\\
 1-p_0^* &amp; \text {if }k=0.\end{cases}$$
 ```
-</code></pre></div></div>
+</code></pre>
 
 <p>renders as</p>
 
