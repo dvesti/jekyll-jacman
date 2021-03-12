@@ -11,6 +11,7 @@ gem "jekyll-paginate"
 gem "jemoji"
 gem "wdm", ">= 0.1.0" if Gem.win_platform?
 gem "i18n"
+gem "json", "2.5.1"
 
 group :jekyll_plugins do
    gem "jekyll-livereload"
