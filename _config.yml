@@ -180,4 +180,6 @@ simple_jekyll_search:
 plugins:
  - jemoji
  - jekyll-paginate
+ - i18n
+ - github-pages
  
