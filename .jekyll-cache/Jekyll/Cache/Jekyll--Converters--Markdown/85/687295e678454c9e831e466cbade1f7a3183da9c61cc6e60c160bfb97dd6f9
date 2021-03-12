@@ -1,0 +1,37 @@
+I"°<p>This post is used for testing tag plugins. See <a href="http://zespia.tw/hexo/docs/tag-plugins.html">docs</a> for more info.</p>
+
+<h2 id="block-quote">Block Quote</h2>
+
+<h3 id="normal-blockquote">Normal blockquote</h3>
+
+<blockquote>
+  <p>Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.</p>
+</blockquote>
+
+<h2 id="code-block">Code Block</h2>
+
+<h3 id="normal-code-block">Normal code block</h3>
+
+<pre><code>alert('Hello World!');
+</code></pre>
+
+<pre><code>print "Hello world"
+</code></pre>
+
+<h3 id="highlight-code-block">Highlight code block</h3>
+
+<pre><code class="language-python">print "Hello world"
+</code></pre>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">def foo
+  puts &#39;foo&#39;
+end</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">def foo
+  puts &#39;foo&#39;
+end</code></pre></figure>
+
+<!--### Gist
+
+ { % gist 996818 % } -->
+:ET
