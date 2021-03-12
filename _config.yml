@@ -179,3 +179,5 @@ simple_jekyll_search:
 # gems:
 plugins:
  - jemoji
+ - jekyll-paginate
+ 
