@@ -7,7 +7,7 @@ categories:
 - Cat3
 ---
 
-This post contains 3 categories. Make sure your theme can display all of the categories.
-Это - сообщение, чтобы проверить работу категорий.
-Категории - 3 штуки.
-По идее - с иерархией
+This post contains 3 categories. Make sure your theme can display all of the categories.  
+Это сообщение, чтобы проверить работу категорий.  
+Категории -- 3 штуки.  
+По идее, -- с иерархией  
