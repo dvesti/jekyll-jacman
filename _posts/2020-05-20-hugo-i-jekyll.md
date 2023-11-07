@@ -8,7 +8,7 @@ tags:
 - GitHub
 - Jekyll
 - Git
-- VS Code
+- VSCode
 - WSL
 excerpt_separator: <!--more-->
 ---

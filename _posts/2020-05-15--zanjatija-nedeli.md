@@ -8,7 +8,7 @@ tags:
 - GitHub
 - Jekyll
 - Gatsby
-- VS Code
+- VSCode
 excerpt_separator: <!--more-->
 ---
 
