@@ -2,9 +2,10 @@
 layout: post  
 title: "Фикс для пагинации в теме для Jekyll - jekyll-jacman"  
 date: 2018-02-22 21:21:20 +0200
-categories: News
+categories: Jekyll
 tags: 
-- Blog
+- Hack
+- Themes
 - Bugs
 excerpt_separator: <!--more-->
 ---

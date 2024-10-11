@@ -2,9 +2,9 @@
 layout: post  
 title: "Домен tallinna.ru"  
 date: 2020-05-17 11:29:20 +0200
-categories: News
+categories: Web
 tags: 
-- Blog
+- DNS
 - GitHub
 excerpt_separator: <!--more-->
 ---

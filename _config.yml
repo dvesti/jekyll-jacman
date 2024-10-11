@@ -3,7 +3,7 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "README_en.md", "Rakefile", "
 
 #### Code Highlighter
 # 'pygments' is unsupported on GitHub Pages now.
-highlighter: rouge
+highlighter: rouge #rouge-code  #agate  #rouge
 
 #### Permalink
 # For more see: http://jekyllrb.com/docs/permalinks/
@@ -104,6 +104,7 @@ menu:
   Категории: /categories
   Тэги: /tags
   О сайте: /about
+ # Feed: /feed.xml
 ## you can create `tags` and `categories` folders (I had created them already).
 ## And create a `index.md` file in each of them.
 ## set `front-matter`as
@@ -238,3 +239,7 @@ simple_jekyll_search:
 # gems:
 plugins:
  - jemoji
+ - jekyll-paginate
+ - i18n
+ #- github-pages
+ 

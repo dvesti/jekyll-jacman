@@ -1,0 +1,13 @@
+I"�<p>Обновим своё имя и прочие настройки в файле -  <code class="language-plaintext highlighter-rouge">_config.yml</code> . Восклицательный (!), наверно, читать дальше. А дальше картинка</p>
+
+<p><img src="/assets/images/2018/config.png" alt="_config.yml" /></p>
+
+<p>The easiest way to make your first post is to edit this one. Go into <code class="language-plaintext highlighter-rouge">/_posts/</code> and update the Hello World markdown file. For more instructions head over to the <a href="https://github.com/dvesti/jekyll">Jekyll Now repository</a> on GitHub.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
+</code></pre></div></div>
+:ET
