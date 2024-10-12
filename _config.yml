@@ -243,3 +243,4 @@ plugins:
  - i18n
  #- github-pages
  
+github: [metadata]

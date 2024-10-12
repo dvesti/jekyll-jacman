@@ -11,3 +11,5 @@ Thumbs.db
 
 *.lock
 .Rproj.user
+
+_site
