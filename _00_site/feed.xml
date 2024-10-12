@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Antuan пишет - Статьи</title>
+    <description>Наши последние сообщения</description>
+    <link>http://localhost:4000</link>
+    
+      
+        <item>
+          <title>JSON 2.0.2 =&gt; 2.3.1</title>
+          <description>&lt;p&gt;По почте пришло извещение о нарушении безопасности на сайте с требование (просьбой) обновить &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;json&quot;&lt;/code&gt;. Да, просьбой. Помню на заброшенных репозиториях не выполнял требования, – отключили &lt;del&gt;газ&lt;/del&gt; сайт. И – правильно.&lt;/p&gt;
+
+&lt;p&gt;Итак, надо обновить &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;json&lt;/code&gt;. Сначала сделал это вручную локально, но это – очковтирательство. Хотя это и пришлось сделать на сервере в &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master branch&lt;/code&gt;, но в профильной ветке &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; сделал всё по-честному: закачал обновлённые файлы, которые изменили файл &lt;strong&gt;Gemfile&lt;/strong&gt;. Хотя, сдаётся мне, что его и не обязательно-то и закачивать на сервер (наверно). Столько много генераторов (GSS) испробовал и продолжаю это делать, что и в пору всё перепутать.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Итак, обновился локально:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Точную команду не помню: надо сразу записывать. Но всё есть в инструкциях по обновлению, как их там называют, – &lt;em&gt;соответствий&lt;/em&gt; или &lt;em&gt;причастий&lt;/em&gt;. Смешно, но тоже слово забыл. Да, вы правы, создавать блоги на генераторе статических страниц могут и не программисты: зачем всё запоминать, когда есть хорошие инструкции и ты знаешь, где их найти. Всё-таки, погрешу, если не скажу, что по каждому сайту стал записывать все команды, которые делал: как по командам &lt;em&gt;Git&lt;/em&gt;‘a, так и по обновлениям. Очень часто помогает, особенно после того, когда этого не делал раньше и повторял одни и те же ошибки, блуждая в трёх соснах.&lt;/p&gt;
+
+&lt;p&gt;Вот и сейчас стал делать &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;push&lt;/code&gt; – &lt;strong&gt;Terminal&lt;/strong&gt; &lt;em&gt;заговорил&lt;/em&gt; о фатальной ошибке:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fatal: remote error: 
+  You can&apos;t push to git://github.com/dvesti/jekyll-jacman.git   
+  Use https://github.com/dvesti/jekyll-jacman.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Наученный горьким опытом, стал искать у себя папку &lt;strong&gt;.git&lt;/strong&gt; и… не нашёл. Бывало такое. Сделал команду &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init&lt;/code&gt; – оказалось, она уже есть (а как же иначе, просто за пару месяцев бездействия на этом сайте всё забыл).&lt;br /&gt;
+В проводнике вывел путь, который не виден (не стал искать функции в компьютере – &lt;em&gt;открыть скрытые файлы&lt;/em&gt;), а просто в путь к папке добавил папку &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.git&lt;/code&gt;. Там нашёл то, что нужно и в файле &lt;em&gt;config&lt;/em&gt; поставил необходимое значение. Обратите внимание в урле есть двоеточие (:)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;url = git@github.com:dvesti/jekyll-jacman.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;вместо&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;url = https://github.com/dvesti/jekyll-jacman.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Примечание&lt;/strong&gt;: файлы держу на &lt;em&gt;GitHub&lt;/em&gt;. Просто прикрутил домен (впрочем, про это я уже &lt;a href=&quot;https://tallinna.ru/web/2020/05/17/domen-tallinna-ru/&quot;&gt;писал&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;Может поможет кому эта хитрость, а то сам раньше на решение её тратил много времени.&lt;br /&gt;
+Потом сделал&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push -u origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;P.S.&lt;/strong&gt; Хотел написать пару строк про обновление, а получилось больше. И уже стал сомневаться, закрыл ли тему, обозначенную в заглавии. Короче все &lt;em&gt;соответствия&lt;/em&gt; (О! Вспомнил слово!) надо обновлять!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;P.S.2&lt;/strong&gt; Правильную команду нашёл в Интернете :blush:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+          <pubDate>2020-07-29T15:01:20+03:00</pubDate>
+          <link>http://localhost:4000/jekyll/2020/07/29/json-231/</link>
+          <guid isPermaLink="true">http://localhost:4000/jekyll/2020/07/29/json-231/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>WSL и Chocolatey</title>
+          <description>&lt;p&gt;Начинает проясняться, почему не удавалось делать деплой &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy&lt;/code&gt; (закидывать новые файлы на сервер) с генератором статических страниц &lt;strong&gt;Hugo&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Как и писал раньше: я использую &lt;strong&gt;VS Code&lt;/strong&gt;, а также установлена подсистема &lt;strong&gt;Windows для Linux (WSL)&lt;/strong&gt;.&lt;br /&gt;
+С &lt;strong&gt;Git&lt;/strong&gt;-ом и &lt;strong&gt;GitHub&lt;/strong&gt;-ом работаю через &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bash.exe&lt;/code&gt;, который стал &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wsl.exe&lt;/code&gt;.&lt;br /&gt;
+&lt;!--more--&gt;
+Пару лет назад ничего этого не было и работал я с обычным окном Терминала.&lt;/p&gt;
+
+&lt;p&gt;Решил попробовать поставить &lt;strong&gt;Hugo&lt;/strong&gt; на &lt;strong&gt;Chocolatey&lt;/strong&gt; (кстати, как и советовала &lt;a href=&quot;https://gohugo.io/getting-started/installing/#chocolatey-windows&quot;&gt;Инструкция по &lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt;, но мы же умные: сначала сделаем, – потом почитаем инструкции).&lt;/p&gt;
+
+&lt;p&gt;Сейчас не буду уточнять, что немножко попутался с ветками при заливке файлов (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;push&lt;/code&gt;) – тоже в Инструкции вычитал. В &lt;a href=&quot;https://git-scm.com/book/ru/v2/%D0%92%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-Git-%D0%9E-%D0%B2%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B8-%D0%B2-%D0%B4%D0%B2%D1%83%D1%85-%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%85&quot;&gt;Инструкции по &lt;strong&gt;Git&lt;/strong&gt;-у&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Проверил версии:&lt;br /&gt;
+&lt;strong&gt;WSL&lt;/strong&gt; = 0.68.3 для &lt;strong&gt;Linux&lt;/strong&gt;,&lt;br /&gt;
+&lt;strong&gt;Choco&lt;/strong&gt; = 0.71 для &lt;strong&gt;Windows&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Нашёл возможность работать в &lt;strong&gt;VS Code&lt;/strong&gt; с &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bash.exe&lt;/code&gt; на &lt;strong&gt;Windows&lt;/strong&gt; (отдельная Инструкция, например, – &lt;a href=&quot;https://azleslie.com/projects/hugo-tutorial/&quot;&gt;здесь&lt;/a&gt;) и – дело пошло. Или баги исправили в более новой версии &lt;strong&gt;Hugo&lt;/strong&gt;, или я просто не привык в оболочке &lt;strong&gt;Ubuntu&lt;/strong&gt;, чтобы работать с её (его) командами для &lt;strong&gt;Linux&lt;/strong&gt;.&lt;br /&gt;
+Впрочем, и много новых непривычных слов &lt;em&gt;нахватался&lt;/em&gt;: сам себя уже перестаю понимать.&lt;/p&gt;
+
+&lt;p&gt;Но Инструкции читать – надо!&lt;/p&gt;
+</description>
+          <pubDate>2020-05-25T11:01:20+03:00</pubDate>
+          <link>http://localhost:4000/web/2020/05/25/wsl-choco/</link>
+          <guid isPermaLink="true">http://localhost:4000/web/2020/05/25/wsl-choco/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Шрифт Merriweather</title>
+          <description>&lt;p&gt;Давно приглядывался к шрифту &lt;em&gt;Merriweather&lt;/em&gt;.&lt;br /&gt;
+А вчера прочитал, что он – один из самых популярный в Интернете.&lt;br /&gt;
+По крайней мере, на новостных сайтах и блогах. И это – справедливо: читается хорошо, выглядит приятно, как латиница, так и кириллица.&lt;br /&gt;
+&lt;!--more--&gt;
+Как правильно установить шрифт на свой сайт указано на &lt;a href=&quot;https://fonts.google.com/specimen/Merriweather?_escaped_fragment_&amp;amp;query=Merriweather&quot;&gt;странице самого шрифта&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Выбрать из предложенных вариантов нужный и нажать на &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+Select this style&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;В появившейся правой колонке нажимаем на &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Embed&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Вставляем в &lt;em&gt;html&lt;/em&gt; страницу между &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;...&amp;lt;/head&amp;gt;&lt;/code&gt; следующий код (в нашей теме &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jekyll-Jacman&lt;/code&gt; это в файле &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/_includes/_partial/head.html&lt;/code&gt;):&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://fonts.googleapis.com/css2?family=Merriweather&amp;amp;display=swap&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;В файле &lt;em&gt;css&lt;/em&gt; (у нас это – &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/assets/css/style.css&lt;/code&gt;) добавляем название шрифта. Должно выглядеть так:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&apos;Merriweather&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;serif&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Сохраняем, ребилдим, проверяем на &lt;em&gt;localhost&lt;/em&gt;`e, отправляем на сервер и…&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Наслаждаемся.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+          <pubDate>2020-05-21T11:01:20+03:00</pubDate>
+          <link>http://localhost:4000/jekyll/2020/05/21/Merriweather-font/</link>
+          <guid isPermaLink="true">http://localhost:4000/jekyll/2020/05/21/Merriweather-font/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Jekyll работает, Hugo - нет</title>
+          <description>&lt;p&gt;Опять провозился со старыми репозитариями, в частности, созданными на &lt;strong&gt;Hugo&lt;/strong&gt;.&lt;br /&gt;
+Был сайт такой хороший, с приятной темой, но теперь, по прошествии нескольких лет бездействия, он перестал слушаться и обновляться прежними методами. Приходится репозитории на &lt;strong&gt;GitHub&lt;/strong&gt; удалять и снова создавать с тем же именем, но… Всё – тоже.&lt;/p&gt;
+
+&lt;p&gt;Несколько раз прошёл процедуру по настройке &lt;strong&gt;SSH&lt;/strong&gt;. Думал, это виновато. Сейчас настроил и визуально и с пониманием дела – всё работает. Т.е. меня сначала смущали урлы репозитория. Всегда были &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://&lt;/code&gt;, а стали &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git://&lt;/code&gt;. Понял, – связано с передачей файлов по &lt;strong&gt;SSH&lt;/strong&gt;.&lt;br /&gt;
+&lt;!--more--&gt;
+Старый сайт на &lt;strong&gt;Jekyll&lt;/strong&gt; – работает штатно при разных урлах, а &lt;strong&gt;Hugo&lt;/strong&gt; – нет!&lt;/p&gt;
+
+&lt;p&gt;Всегда себя ругаю: что-то не получается сижу часами, а бывает и до 4-х ночи, – типа, разбираюсь.  Но, как обычно, не выходит &lt;em&gt;Каменный Цветок&lt;/em&gt; у Данил*…&lt;/p&gt;
+
+&lt;p&gt;И &lt;strong&gt;Git&lt;/strong&gt; обновил и с &lt;strong&gt;VS Code&lt;/strong&gt; помучился: показалось, что сбил настройки по устанвке &lt;strong&gt;Bash&lt;/strong&gt;, а, скорее всего, так и было. Начитаешься всякой всячины в интернете, пусть даже и высоко-интелектуально-техническое. Впрочем, помощь я оттуда получаю всегда: ребята – молодцы!&lt;/p&gt;
+
+&lt;p&gt;Ещё я поставил уже &lt;strong&gt;WSL2&lt;/strong&gt; (надеюсь), поэтому есть разница. С версиями того же &lt;strong&gt;Hugo&lt;/strong&gt;: работая непосредственно в &lt;strong&gt;Git&lt;/strong&gt;e – 0,70, а в Терминале &lt;strong&gt;VS Code&lt;/strong&gt; – 0,68. Это постоянно вводит в заблуждение, но как бы объясняет, почему не получается.  Хочется писать в быстром &lt;strong&gt;Hugo&lt;/strong&gt;, но не могу. &lt;strong&gt;Jekyll&lt;/strong&gt; пусть не обижается – просто Автор весьма любопытен.&lt;/p&gt;
+
+&lt;p&gt;Вот и сейчас отложил &lt;em&gt;быстренького&lt;/em&gt; и принялся писать сообщение (статью?) в не менее красивом &lt;strong&gt;Jekyll&lt;/strong&gt;e с ещё более красивым доменом.&lt;/p&gt;
+</description>
+          <pubDate>2020-05-20T16:01:20+03:00</pubDate>
+          <link>http://localhost:4000/web/2020/05/20/hugo-i-jekyll/</link>
+          <guid isPermaLink="true">http://localhost:4000/web/2020/05/20/hugo-i-jekyll/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Домен tallinna.ru</title>
+          <description>&lt;p&gt;Прикрепил доменное имя – &lt;em&gt;tallinna.ru&lt;/em&gt;&lt;br /&gt;
+Были определённые проблемы и сделано масса ошибок.&lt;/p&gt;
+
+&lt;p&gt;Во-первых, мой домен был прикреплён к хостингу, от которого я отказался 2 года назад.&lt;br /&gt;
+Во-вторых, мой регистратор изменился: все зарегистрированные домены переехали на &lt;em&gt;Reg.ru&lt;/em&gt;. Если на &lt;em&gt;Naunet&lt;/em&gt; я понимал, что надо делать и за 15 лет достаточно изучил админку, то на Reg.ru всё незнакомо и, я бы сказал, менее удачно, что ли. Это положение дел тоже затормозило основное дело.&lt;br /&gt;
+&lt;!--more--&gt;
+В-третьих, Инструкции только на английском и несколько вариантов. В интернете ролики тоже о разном. Просмотрел 3-4 и сделал… по-другому.&lt;/p&gt;
+
+&lt;p&gt;В-чётвёртых, в Инструкции несколько вариантов присоединения пользовательского домена и меня интересовал именно это – &lt;strong&gt;Apex&lt;/strong&gt;. То есть типа &lt;em&gt;example.com&lt;/em&gt;, без &lt;em&gt;www&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Теперь, отбросив все ошибки, что я совершил, опишу действия. Без конкретики: принципы.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Необходимо зарегистрировать или присоединить домен к существующему Хостеру. В Контрольной Панели Регистраторв (&lt;em&gt;Reg.ru&lt;/em&gt;) я перенастроил &lt;em&gt;DNS&lt;/em&gt;-ы на действующего Хостера. У меня он есть, но можно делать, как описано в роликах на &lt;em&gt;YouTube&lt;/em&gt;: зарегистрировать домен (а то и бесплатно) и там же настраивать &lt;em&gt;DNS&lt;/em&gt;. У моего Регистратора визуально-понятного Интерфейса я не нашёл, поэтому просто поставил данные хостера (&lt;em&gt;NS.xxxxx.com&lt;/em&gt;, 3 штуки). Замечу, что, скорее всего, придётся ждать смену данных до 24 часов.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Не дожидаясь смены данных, поднимаю &lt;em&gt;DNS&lt;/em&gt;-ы в Контрольной Панели Хостера. Или пишете в Саппорт. Или вручную – есть функция – перенести домен. То есть Хостер присоединяет Домен к своему Серверу.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Я создал полноценный виртуальный домен с папкой на сервере и закачал туда тестовый &lt;em&gt;index.html&lt;/em&gt;. Это сделано было для проверки, чтобы узнать, когда заработает домен на новом месте. Это можно котролировать и по &lt;a href=&quot;http://www.ripn.su/nic/whois/&quot;&gt;RIPN&lt;/a&gt; – &lt;em&gt;WhoIs&lt;/em&gt;. Пока сайт не появится ничего делать с &lt;em&gt;GitHub&lt;/em&gt;-ом не надо.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Прошло время. Возможно, и 12-15 часов. Сайт заработал. Теперь надо добавить так называемый &lt;em&gt;ANAME&lt;/em&gt; (&lt;em&gt;A&lt;/em&gt;). Для этого захожу в настройки &lt;em&gt;DNS&lt;/em&gt; уже нашего работающего домена и добавляю 4 &lt;em&gt;IP&lt;/em&gt;.&lt;br /&gt;
+Важная ссылка – &lt;a href=&quot;https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain&quot;&gt;Configuring an apex domain&lt;/a&gt;&lt;br /&gt;
+У Хостера к существующим добавляешь &lt;em&gt;A&lt;/em&gt; запись (с пустым под-доменом) данные &lt;em&gt;IP&lt;/em&gt;-адреса:&lt;br /&gt;
+185.199.108.153&lt;br /&gt;
+185.199.109.153&lt;br /&gt;
+185.199.110.153&lt;br /&gt;
+185.199.111.153&lt;br /&gt;
+Ещё пройдёт пол-часа, чтобы это сохранилось и подтверждилось у Хостера.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Проверям (см. ссылку выше) через Терминал (у меня &lt;em&gt;VS Code - WSL&lt;/em&gt;), выполнив команду: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dig tallinna.ru +noall +answer&lt;/code&gt;
+Я проверял много раз и видел: &lt;em&gt;DNS&lt;/em&gt;-ы меняются. Когда увидите наши 4 &lt;em&gt;IP&lt;/em&gt;, то можно настраивать сам &lt;em&gt;GitHub&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;В &lt;em&gt;Settings&lt;/em&gt;-ах сайта на &lt;em&gt;GitHub&lt;/em&gt;-e ставим свой домен – &lt;em&gt;tallinna.ru&lt;/em&gt; – и соглашаемся. Возможно, поначалу появится надписи, что &lt;em&gt;так делать нельзя и домен плохой&lt;/em&gt;, но надо быть терпеливым и подождать.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Затем на локальном компьютере следует поменять в &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; &lt;em&gt;url&lt;/em&gt; на &lt;em&gt;tallinna.ru&lt;/em&gt;.&lt;br /&gt;
+А запись в &lt;em&gt;baseURL&lt;/em&gt; я убрал вообще, даже слэш (/). Иначе могут не подключиться стили: всё проверяется локально &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://127.0.0.1:4000/&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;После указания домена на &lt;em&gt;GitHub&lt;/em&gt;-e, необходимо сделать &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull&lt;/code&gt;, чтобы обновления удалённого репозитория синхронизировались с локальным (добавится файл &lt;em&gt;CNAME&lt;/em&gt;). И уже затем делаем &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Наслаждаемся!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+          <pubDate>2020-05-17T12:29:20+03:00</pubDate>
+          <link>http://localhost:4000/web/2020/05/17/domen-tallinna-ru/</link>
+          <guid isPermaLink="true">http://localhost:4000/web/2020/05/17/domen-tallinna-ru/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Мысли за неделю № 20</title>
+          <description>&lt;p&gt;Целую неделю занимался не пойми чем.&lt;br /&gt;
+Вспоминал свои старые сайты, созданные с помощью генераторов статических страниц.&lt;/p&gt;
+
+&lt;p&gt;Сайты есть, но к некоторым уже доступ получить не могу: то версии устарели, то я сам потерял навык.&lt;br /&gt;
+И ещё одно: я стал использовать &lt;strong&gt;&lt;em&gt;VS Code&lt;/em&gt;&lt;/strong&gt;.&lt;br /&gt;
+Там вроде по интерфейсу проще: всё в одном, не так, как в &lt;em&gt;Terminal&lt;/em&gt;е отдельном, которым я пользовался пару лет назад.&lt;br /&gt;
+Но в этом и проблема: обычные пересылки – &lt;em&gt;Push&lt;/em&gt; – перестали корректно работать. Плодит кучу файлов на сервере (а чаще всего и – не туда, куда хотел).&lt;br /&gt;
+&lt;!--more--&gt;
+К тому же, я в движках запутался.&lt;br /&gt;
+Когда много текста и сообщеений, &lt;strong&gt;Jekyll&lt;/strong&gt; начинает тормозить, начиная с &lt;em&gt;localhost&lt;/em&gt;‘а (при генерировании статьи). Поэтому захотелось поставить и работать на &lt;em&gt;Hugo&lt;/em&gt;.&lt;br /&gt;
+Его быстрота мне очень нравилась и пару лет назад я несколько сайтов на нём сделал. Всё корректно обновлялось, но сегодня (вчера, пзавчера и так дальше) уже не получается.&lt;/p&gt;
+
+&lt;p&gt;Отложил. Занялся другими.
+Присмотривался к &lt;em&gt;Gatsby&lt;/em&gt; – не пошло.&lt;br /&gt;
+Доказавр – не пошло.  Да и ЯвуСкрипт я не очень понимаю.
+Самое простое для меня – &lt;strong&gt;Jekyll&lt;/strong&gt; (Джекил)&lt;br /&gt;
+Посмотрел (пока не закончил) на &lt;em&gt;Nuxt.JS&lt;/em&gt;.  Интересно, но сайты, как старому ВэбМастеру, не понравились: необычные. Я к таким не привык.&lt;br /&gt;
+Как говорится: мы люди простые – нам бы супу…&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Hexo&lt;/em&gt; – хорошо работает. Есть хорошее руководство на русском языке (это подкупает). Быстрый. Но…&lt;/p&gt;
+
+&lt;p&gt;Пока вернусь-ка я к &lt;strong&gt;Jekyll&lt;/strong&gt;.&lt;br /&gt;
+Тем более, что пару сайтов с &lt;em&gt;GitHub&lt;/em&gt; уже успешно с… скопировал и они мне нравятся.&lt;/p&gt;
+
+&lt;p&gt;Потом попробую присобачить домен (завалялся один – год без дела).&lt;br /&gt;
+Тоже – вызов, так как сайт не в главной директории, а в папке (репозитории).&lt;br /&gt;
+Ещё в интернете встречал, что на хостинге &lt;em&gt;GitHub&lt;/em&gt; есть ограничение по плагинам.&lt;br /&gt;
+Подумаем.&lt;br /&gt;
+Видел курс, где говорилось, что можно на своём хостинге все плагины ставить (пока не ставил) и моментально закидывать изменения на сервер по &lt;em&gt;SHH&lt;/em&gt;.  Это тоже надо изучить и попробовать…&lt;/p&gt;
+
+&lt;p&gt;Задумок много.&lt;br /&gt;
+Единственное, что писать статьи некогда. А надо бы. Для этого блог-то и задумывался.&lt;/p&gt;
+</description>
+          <pubDate>2020-05-15T16:49:20+03:00</pubDate>
+          <link>http://localhost:4000/news/2020/05/15/zanjatija-nedeli/</link>
+          <guid isPermaLink="true">http://localhost:4000/news/2020/05/15/zanjatija-nedeli/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ещё один тест-02</title>
+          <description>&lt;p&gt;&lt;img src=&quot;https://tallinna.ru/assets/images/2020/wallbase.jpg&quot; alt=&quot;Tallinna&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;В конфиге переписал, чтобы &lt;em&gt;«читать дальше»&lt;/em&gt; был после первого параграфа.
+На старых это работает.&lt;br /&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;Это новый пост от &lt;strong&gt;2020&lt;/strong&gt;-года… :smile:&lt;br /&gt;
+2020-05-20&lt;br /&gt;
+Тест от &lt;strong&gt;2024-07-16&lt;/strong&gt; :smile:&lt;/p&gt;
+
+&lt;h2 id=&quot;подсветка-javascript&quot;&gt;Подсветка JavaScript&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```javascript
+function sayHello(name) {
+  if (!name) {
+    console.log(&apos;Hello World&apos;);
+  } else {
+    console.log(`Hello ${name}`);
+  }
+}
+```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;результат&quot;&gt;Результат:&lt;/h3&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello World&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`Hello &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+
+&lt;p&gt;Academic supports a Markdown extension for highlighting code syntax. You can enable this feature by toggling the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;highlight&lt;/code&gt; option in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```python
+import pandas as pd
+data = pd.read_csv(&quot;data.csv&quot;)
+data.head()
+```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;renders as&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;data.csv&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;math&quot;&gt;Math&lt;/h3&gt;
+
+&lt;p&gt;Academic supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;math&lt;/code&gt; option in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;To render &lt;em&gt;inline&lt;/em&gt; or &lt;em&gt;block&lt;/em&gt; math, wrap your LaTeX math with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$...$&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$...$$&lt;/code&gt;, respectively.&lt;/p&gt;
+
+&lt;p&gt;Example &lt;strong&gt;math block&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```tex
+$$\gamma_{n} = \frac{ 
+\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
+\left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
+{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
+```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;renders as&lt;/p&gt;
+
+\[\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}\]
+
+&lt;p&gt;Example &lt;strong&gt;inline math&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$\nabla F(\mathbf{x}_{n})$&lt;/code&gt; renders as $\nabla F(\mathbf{x}_{n})$.&lt;/p&gt;
+
+&lt;p&gt;Example &lt;strong&gt;multi-line math&lt;/strong&gt; using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\\\\&lt;/code&gt; math linebreak:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```tex
+$$f(k;p_0^*) = \begin{cases} p_0^* &amp;amp; \text{if }k=1, \\\\
+1-p_0^* &amp;amp; \text {if }k=0.\end{cases}$$
+```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;renders as&lt;/p&gt;
+
+\[f(k;p_0^*) = \begin{cases} p_0^* &amp;amp; \text{if }k=1, \\\\
+1-p_0^* &amp;amp; \text {if }k=0.\end{cases}\]
+
+&lt;p&gt;&lt;a href=&quot;http://ww1.sinaimg.cn/large/81b78497jw1emfgts2pt4j21hc0u0k1c.jpg&quot;&gt;Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2020/wallbase.jpg&quot; alt=&quot;Wallbase-2&quot; /&gt;&lt;/p&gt;
+</description>
+          <pubDate>2020-05-02T18:21:20+03:00</pubDate>
+          <link>http://localhost:4000/news/photo/2020/05/02/test-02/</link>
+          <guid isPermaLink="true">http://localhost:4000/news/photo/2020/05/02/test-02/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Фича - Читать дальше</title>
+          <description>&lt;p&gt;В этот статье отметим, где должен быть «Читать дальше».
+Сделаем два абзаца и потренируемся.
+В конце опишу результат&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;a. Просто два энтера получается «Читать дальше» в конце текста&lt;br /&gt;
+b. После первой строчки (параграфа) делаем два пробела – в конце&lt;br /&gt;
+c. После первого абзаца делаем два энтера, вставляем &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt; !--more-- &amp;gt;&lt;/code&gt; и снова два энтера  в конце&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Решение:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Добавил в шапку (там, где заголовок и дата) строчку &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;excerpt_separator: &amp;amp;lt;!-- more --&amp;amp;gt;&lt;/code&gt; и в текстек поставил &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;amp;lt;!-- more --&amp;amp;gt;&lt;/code&gt; там, где я хочу
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;P.S.&lt;/strong&gt; Оказывается, эту темы мы &lt;a href=&quot;https://dvesti.github.io/jekyll-jacman/2013/12/25/excerpts/#more&quot;&gt;уже обсуждали&lt;/a&gt;&lt;br /&gt;
+Там уставилось само после первого параграфа: пост старый, на старой закваске (программы обновились)&lt;/p&gt;
+</description>
+          <pubDate>2020-05-01T12:21:20+03:00</pubDate>
+          <link>http://localhost:4000/jekyll/2020/05/01/read-more/</link>
+          <guid isPermaLink="true">http://localhost:4000/jekyll/2020/05/01/read-more/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Как отображать код Liquid code в статье</title>
+          <description>&lt;p&gt;Писал статью.  (&lt;em&gt;test-проверка: 2020-05-01&lt;/em&gt;)&lt;br /&gt;
+Указал код. Всё красиво с подцветкой, но…&lt;br /&gt;
+Не отобразился и вообще чепуха произошла.&lt;br /&gt;
+По-гуглил. Нашёл &lt;a href=&quot;https://www.juev.org/2012/07/05/jekyll-liquid-code-in-article/&quot;&gt;это решение&lt;/a&gt;&lt;br /&gt;
+В &lt;a href=&quot;https://dvesti.github.io/jekyll-jacman/news/2018/02/22/pagination-jacman/&quot;&gt;предыдущей статье&lt;/a&gt; получилось всё-таки сделать как надо&lt;/p&gt;
+
+&lt;p&gt;Секрет в тэгах {&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%raw%&lt;/code&gt;} и {&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%endraw%&lt;/code&gt;}.&lt;br /&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;Код с &lt;strong&gt;хтмл&lt;/strong&gt; и &lt;em&gt;руби&lt;/em&gt; и &lt;strong&gt;&lt;em&gt;всего&lt;/em&gt;&lt;/strong&gt;, что есть в файле надо обрамить ими - и всё! :smile:&lt;br /&gt;
+&lt;strong&gt;P.S.&lt;/strong&gt; &lt;a href=&quot;https://jekyllrb.com/docs/templates/#code-snippet-highlighting&quot;&gt;Полезная ссылка&lt;/a&gt; по теме&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Обновлено: 2020-05-03&lt;/strong&gt;&lt;br /&gt;
+Следует использовать эти тэги:&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{%raw%}&lt;/code&gt; – открывающийся&lt;br /&gt;
+и
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{%endraw%}&lt;/code&gt; – закрывающийся&lt;/p&gt;
+</description>
+          <pubDate>2018-02-22T23:21:20+02:00</pubDate>
+          <link>http://localhost:4000/news/2018/02/22/liquid-code-in-article/</link>
+          <guid isPermaLink="true">http://localhost:4000/news/2018/02/22/liquid-code-in-article/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Фикс для пагинации в теме для Jekyll - jekyll-jacman</title>
+          <description>&lt;p&gt;Итак, тема для &lt;strong&gt;Jekyll - &lt;em&gt;Jekyll-Jacman&lt;/em&gt;&lt;/strong&gt;
+Не работала пагинация.
+После того как изменил количество сообщений на страницу - вместо 20 поставил 5 - появилась пагинация, но не с правильными путями&lt;/p&gt;
+
+&lt;p&gt;Изменения делал в файле&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-jacman\_includes\index.html&lt;/code&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Меняем это:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nav&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;page-nav&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;clearfix{% if site.index.expand != true  %} unexpand{% endif %}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nav&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;page-nav&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;clearfix&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% if &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;previous_page&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%}
+    &amp;lt;a class=&quot;extend prev&quot; rel=&quot;prev&quot; href=&quot;{{ paginator.previous_page_path }&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;Prev&amp;lt;/a&amp;gt;
+    {% endif %}
+    {% if paginator.page == 1 %}
+    &amp;lt;span class=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;1&amp;lt;/span&amp;gt;
+    {% else %}
+    &amp;lt;a class=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; href=&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;1&amp;lt;/a&amp;gt;
+    {% endif %}
+    {% for i in (2..paginator.total_pages) %}
+    {%if i == paginator.page %}
+    &amp;lt;span class=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;{{ i }}&amp;lt;/span&amp;gt;
+    {% else %}
+    &amp;lt;a class=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; href=&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;{{ i }}&amp;lt;/a&amp;gt;
+    {% endif %}
+    {% endfor %}
+     {% if paginator.next_page %}
+    &amp;lt;a class=&quot;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;extend&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; rel=&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; href=&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;next_page_path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;Next&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+    {% endif %}
+  &amp;lt;/nav&amp;gt;
+  &amp;lt;/nav&amp;gt;
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;На это:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nav&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;page-nav&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;clearfix{% if site.index.expand != true  %} unexpand{% endif %}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nav&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;page-nav&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;clearfix&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% if &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;previous_page&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%}
+    &amp;lt;a class=&quot;extend prev&quot; rel=&quot;prev&quot; href=&quot;{{ site.baseurl }&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;previous_page_path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;Пред.&amp;lt;/a&amp;gt;
+    {% endif %}
+    {% if paginator.page == 1 %}
+    &amp;lt;span class=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;1&amp;lt;/span&amp;gt;
+    {% else %}
+    &amp;lt;a class=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; href=&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;baseurl&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;1&amp;lt;/a&amp;gt;
+    {% endif %}
+    {% for i in (2..paginator.total_pages) %}
+    {%if i == paginator.page %}
+    &amp;lt;span class=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;{{ i }}&amp;lt;/span&amp;gt;
+    {% else %}
+    &amp;lt;a class=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; href=&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;baseurl&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;{{ i }}&amp;lt;/a&amp;gt;
+    {% endif %}
+    {% endfor %}
+     {% if paginator.next_page %}
+    &amp;lt;a class=&quot;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;extend&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; rel=&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; href=&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;baseurl&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;next_page_path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;След.&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+    {% endif %}
+  &amp;lt;/nav&amp;gt;
+  &amp;lt;/nav&amp;gt;
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+          <pubDate>2018-02-22T21:21:20+02:00</pubDate>
+          <link>http://localhost:4000/jekyll/2018/02/22/pagination-jacman/</link>
+          <guid isPermaLink="true">http://localhost:4000/jekyll/2018/02/22/pagination-jacman/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Первое сообщение блога!</title>
+          <description>&lt;p&gt;Обновим своё имя и прочие настройки в файле -  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; . Восклицательный (!), наверно, читать дальше. А дальше картинка&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018/config.png&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The easiest way to make your first post is to edit this one. Go into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/_posts/&lt;/code&gt; and update the Hello World markdown file. For more instructions head over to the &lt;a href=&quot;https://github.com/dvesti/jekyll&quot;&gt;Jekyll Now repository&lt;/a&gt; on GitHub.&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+          <pubDate>2018-02-19T19:47:20+02:00</pubDate>
+          <link>http://localhost:4000/jekyll/2018/02/19/Hello-World/</link>
+          <guid isPermaLink="true">http://localhost:4000/jekyll/2018/02/19/Hello-World/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Конфиг темы - Jekyll-Jacman - 如何使用 Jacman 主题</title>
+          <description>&lt;h2 id=&quot;主题介绍&quot;&gt;主题介绍&lt;/h2&gt;
+
+&lt;p&gt;Jekyll-Jacman 是为 &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 &lt;a href=&quot;https://github.com/wuchong/jacman&quot;&gt;Jacman&lt;/a&gt; 移植而来。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2 id=&quot;配置指南&quot;&gt;配置指南&lt;/h2&gt;
+
+&lt;p&gt;Jacman 主题提供了丰富的配置属性，可以实现您对主题的自定义。配置文件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;位于主题根目录下。本次更新对配置文件进行了较大调整，如您之前就使用了 Jacman，也需要您根据以下指南进行相应的修改  。&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##### 菜单
+menu:
+  主页: /
+  归档: /archives
+  关于: /about
+
+#### 控件
+widgets:
+- category
+- tag
+- links
+- rss
+
+#### RSS
+rss: /atom.xml
+
+#### 图片相关
+imglogo:
+  enable: true               ## 是否显示网站 logo
+  src: img/logo.png  
+favicon: img/favicon.ico     ## 网站图标
+apple_icon: img/jacman.jpg   ## 苹果设备上的图标，背景不要透明
+author_img: img/author.jpg   ## 网站底部的博主头像
+banner_img: img/banner.jpg   ## 博客顶部的图片
+
+close_aside: false      ##是否在文章页面自动关闭侧边栏
+
+#### 首页相关
+index:
+  expand: true              ## 首页文章是否展开。默认为展开式，显示 Read More。
+  excerpt_link: Read More
+
+#### 作者信息
+author:
+  name: ## 作者名
+  intro_line1:  &quot;Hello ,I&apos;m Larry Page in Google.&quot;    ## 网站底部的个人介绍
+  intro_line2:  &quot;This is my blog,believe it or not.&quot;  
+  weibo_verifier:  ## 微博秀的验证码
+  tsina:           ## 用于微博秀和微博分享
+  weibo:           ## 用于显示网站底部社交按钮，下同
+  douban:
+  zhihu:  
+  email:
+  twitter:
+  github:  
+  facebook:  
+  linkedin:  
+  google_plus:  
+  stackoverflow:  
+
+
+#### 目录
+toc:
+  article: true   ## 是否在文章中显示目录
+  aside: true     ## 是否在侧边栏显示目录
+
+#### 友情链接
+links:
+  码农圈: https://coderq.com,一个面向程序员交流分享的新一代社区
+  Jark&apos;s Blog: http://wuchong.me
+  
+#### 评论
+duoshuo_shortname:  
+disqus_shortname:  
+
+#### 分享按钮
+jiathis:
+  enable: false   ## 默认使用主题内建分享
+  id:  
+  tsina:  
+  
+#### 网站统计
+google_analytics:
+  enable: false
+  id:            ## google analytics ID.
+  site:          ## 网站地址.
+baidu_tongji:
+  enable: false
+  sitecode:      ## 百度统计站点特征码
+cnzz_tongji:
+  enable: false
+  siteid:        ## CNZZ统计站点ID
+
+#### 杂项
+ShowCustomFont: true  
+fancybox: true  
+totop: true  
+
+#### 自定义搜索
+google_cse:
+  enable: false
+  cx:  
+baidu_search:  
+  enable: false
+  id:  
+  site: http://zhannei.baidu.com/cse/search
+tinysou_search:     ## http://tinysou.com/
+  enable: false
+  id: &quot;4ac092ad8d749fdc6293&quot;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;属性功能&quot;&gt;属性功能&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;菜单 menu&lt;/strong&gt;
+默认没有启用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/tags&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/categories&lt;/code&gt;页面，如果需要启用请在博客目录下分别建立&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tags&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;categories&lt;/code&gt;文件夹每个文件夹中分别包含一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.md&lt;/code&gt;文件。内容为：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language----&quot;&gt;layout: tags (或categories)  
+title: tags (或categories)  
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;      因为主题中已经内置了这两个页面的模板，所以他们会被正确的解析出来。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;控件 widgets&lt;/strong&gt;
+提供了7种小工具。包括标签、分类、RSS、友情链接、微博秀。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;友情链接&lt;/strong&gt;：友情链接的网址添加可以在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;links&lt;/code&gt;属性下添加。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;微博秀&lt;/strong&gt;：需要注意的是，如果要启用微博秀，您必须填上&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;author&lt;/code&gt;属性下&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tsina&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;weibo_verifier&lt;/code&gt;的值，前者是您微博ID，后者是您微博秀的验证码，访问 &lt;a href=&quot;http://app.weibo.com/tool/weiboshow&quot;&gt;http://app.weibo.com/tool/weiboshow&lt;/a&gt; 在如下图位置，可以获得您的 verifier，如：我的是&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b3593ceb&lt;/code&gt;。
+&lt;img src=&quot;http://ww1.sinaimg.cn/large/81b78497jw1emegd6b0ytj209204pweu.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果要关闭侧边栏，将&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;close_aside&lt;/code&gt;置为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;，就会在博文页面自动关闭侧边栏。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;图片相关 Image&lt;/strong&gt;
+本主题可以设置网站相关图片，例如网站图标（&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;favicon&lt;/code&gt;）、网站logo（&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;imglogo&lt;/code&gt;）、作者头像（&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;author_img&lt;/code&gt;）。建议启用网站logo，格式建议为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.svg&lt;/code&gt;或&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.png&lt;/code&gt;格式。同时建议提供配套的 favicon 以及在苹果设备上的图标&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apple_icon&lt;/code&gt;（背景不要透明）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;首页显示模式 Index&lt;/strong&gt;
+目前首页的显示模式支持两种，一种是原先的卡片式（前往 &lt;a href=&quot;http://wuchong.me/jacman&quot;&gt;Demo&lt;/a&gt; 预览），另一种是类似官方主题的文章展开式（&lt;a href=&quot;http://wuchong.me&quot;&gt;本站&lt;/a&gt;即采用的这种）。两者各有优劣，前者首页加载速度更快，后者文章内容更能吸引读者。主题默认采用后一种展开式，如需开启第一种卡片式，请设置&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt;属性下的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;expand: false&lt;/code&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;卡片式的文章摘要是截取文章内容的前140个字，也可以自己总结&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;description&lt;/code&gt;并将其放在开头的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;front-matter&lt;/code&gt;中。展开式的文章摘要就是使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;!-- more --&amp;gt;&lt;/code&gt;截取了。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;作者信息 author&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;作者信息，建议尽量填写完整。其中&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tsina&lt;/code&gt;是你的新浪微博ID，不同于用户名或微博主页地址。启用这个属性后，其他用户在微博上分享你文章的同时会自动@你。同时它和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;weibo_verifier&lt;/code&gt;一起作用生成微博秀。&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;intro_line1&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;intro_line2&lt;/code&gt;是网站底部的个人介绍。&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;weibo&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;twitter&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;facebook&lt;/code&gt;等是用来显示网站右下角的社交按钮的，如下图所示。
+&lt;img src=&quot;http://ww4.sinaimg.cn/large/81b78497jw1emgscr3575j2078050jrc.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;目录 toc&lt;/strong&gt;
+是否启用在文章中或侧边栏中的目录功能。二者可以都为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;或都为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;。同时，如果你希望在特定的某一篇文章中关闭目录功能你可以在文章文件开头中的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;front-matter&lt;/code&gt;中加上一行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toc: false&lt;/code&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;评论 comments&lt;/strong&gt;
+填写&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;duoshuo_shortname&lt;/code&gt;&lt;a href=&quot;http://duoshuo.com/&quot;&gt;多说&lt;/a&gt;的用户名，启用多说评论系统。在大陆地区更好用的评论系统。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;填写&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;disqus_shortname&lt;/code&gt;&lt;a href=&quot;http://disqus.com/&quot;&gt;disqus&lt;/a&gt; 的用户名，启用 disqus 评论系统。国际上更广泛使用的评论系统。设置博客根目录下的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;文件中的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;disqus_shortname&lt;/code&gt;同样也能开启该功能。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;加网分享 jiathis&lt;/strong&gt;
+&lt;a href=&quot;http://www.jiathis.com/&quot;&gt;加网&lt;/a&gt;分享系统。默认关闭，因为主题已经内置了原生的分享功能。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;网站统计 Analytics&lt;/strong&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;google_analytics&lt;/code&gt;：Google Analytics追踪代码。请注意：Google Analytics已经升级到了Universal Analytics。请先前往后台升级你的Google Analytics版本后再启用追踪代码，更多信息请&lt;a href=&quot;https://developers.google.com/analytics/devguides/collection/upgrade/?hl=zh_CN&quot;&gt;点击这里&lt;/a&gt;了解。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;baidu_tongji&lt;/code&gt;：百度统计功能。需要填写站点特征码&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sitecode&lt;/code&gt;，在&lt;a href=&quot;http://tongji.baidu.com/web/welcome/login&quot;&gt;官网&lt;/a&gt;注册并配置站点后，获取特征码。特征码可以在「网站中心」-&amp;gt; 「代码获取」中查看，如下图所示的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e6d1f421bbc9962127a50488f9ed37d1&lt;/code&gt;，注意去掉前面的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3F&lt;/code&gt;。
+&lt;img src=&quot;http://ww4.sinaimg.cn/large/81b78497jw1emf4v6qf91j20kf07sq8v.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cnzz_tongji&lt;/code&gt;：站长统计功能。需要填写站点ID&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;siteid&lt;/code&gt;，同理在&lt;a href=&quot;http://www.cnzz.com&quot;&gt;站长官网&lt;/a&gt;注册并配置站点后获得。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;数学公式 mathjax&lt;/strong&gt;
+主题支持写 LaTex 数学公式。只需要在文章文件开头的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;front-matter&lt;/code&gt;中，加上一行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mathjax: true&lt;/code&gt;，即可在文中写 LaTex 公式。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;图片浏览 fancybox&lt;/strong&gt;
+默认关闭，如果你经常发表 Gallery 类型的文章，那么请设置为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;返回顶部 totop&lt;/strong&gt;
+右下角&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;返回顶部&lt;/code&gt;按钮，默认开启。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;自定义搜索 Search&lt;/strong&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;baidu_search&lt;/code&gt;：如果开启百度站内搜索需要登录 &lt;a href=&quot;http://zn.baidu.com/&quot;&gt;百度站内搜索&lt;/a&gt;，配置好你的站点，并开启站内搜索获取搜索ID，另外&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site&lt;/code&gt;属性可以填默认值，也可以填自己做了CNAME的二级域名，更详细的可以阅读&lt;a href=&quot;http://gengbiao.me/hexo/hexo%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/&quot;&gt;这篇博客&lt;/a&gt;了解。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;google_cse&lt;/code&gt;：如果开启谷歌自定义搜索需要先登录 &lt;a href=&quot;https://www.google.com/cse/&quot;&gt;Google CSE&lt;/a&gt;，配置好你的站点，并获得此自定义搜索的ID。此外你需要在博客目录下建立&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search&lt;/code&gt;文件夹并包含一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.md&lt;/code&gt;文件。内容为：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; layout: search
+ title: search
+ ---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tiny_search&lt;/code&gt;: 如果要开启&lt;a href=&quot;http://tinysou.com/&quot;&gt;微搜索&lt;/a&gt;，需要先注册一个帐号，配置一个Engine，将Engine的Key填入配置文件中的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;即可。&lt;/p&gt;
+
+&lt;h2 id=&quot;常见问题&quot;&gt;常见问题&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Q：图片默认都是居左的，我怎么设置能让图片居中呢？&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;img src=&quot;&quot; style=&quot;display:block;margin:auto&quot;/&amp;gt;&lt;/code&gt;的HTML标签。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Q：如何建立一篇图片类文章（Gallery Post）？&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;直接新建一个 Markdown 文件，将其&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;front-matter&lt;/code&gt;修改为如下，即可看到主题为图片类文章提供的样式。&lt;/p&gt;
+
+      &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+
+      &lt;hr /&gt;
+      &lt;p&gt;layout: photo
+title: Gallery Post
+photos:&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://i.minus.com/ibobbTlfxZgITW.jpg&quot;&gt;http://i.minus.com/ibobbTlfxZgITW.jpg&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://i.minus.com/iedpg90Y0exFS.jpg&quot;&gt;http://i.minus.com/iedpg90Y0exFS.jpg&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;```&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Q：我在配置文件中给某一项设置了值，但为什么总是看不到效果啊？&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;文件中的每个属性值前面必须留一个空格，建议在 Sublime/Notepad++ 中开启显示所有空格模式。另每篇文章的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;front-matter&lt;/code&gt; 也要注意这个问题。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Q：怎么提意见和建议？&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;主题还在不断完善中，欢迎 &lt;a href=&quot;https://github.com/Simpleyyt/jekyll-jacman/issues&quot;&gt;open issue&lt;/a&gt; 来提建议，参与讨论。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Q：为什么我修改了配置文件/发表了博文，解析出来的却是乱码呢？&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;请将你的配置文件/markdown文件保存成 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UTF-8&lt;/code&gt; 格式。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Q：为什么开启了微博秀后，显示是空白的，没有内容展示？&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;每次修改参数都会这样，需要多刷新几次或者上传到服务器上就好了。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+          <pubDate>2015-09-20T00:00:00+03:00</pubDate>
+          <link>http://localhost:4000/jekyll/2015/09/20/how-to-use-jacman/</link>
+          <guid isPermaLink="true">http://localhost:4000/jekyll/2015/09/20/how-to-use-jacman/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Смайлики - Emoji Test</title>
+          <description>&lt;p&gt;This is an emoji test. :smile:&lt;/p&gt;
+
+&lt;p&gt;:bowtie::smile::laughing::blush::smiley::relaxed::smirk:
+:heart_eyes::kissing_heart::kissing_closed_eyes::flushed::relieved::satisfied::grin:&lt;/p&gt;
+</description>
+          <pubDate>2015-09-19T00:00:00+03:00</pubDate>
+          <link>http://localhost:4000/2015/09/19/emoji-test/</link>
+          <guid isPermaLink="true">http://localhost:4000/2015/09/19/emoji-test/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Галерея - Gallery Post</title>
+          <description>&lt;p&gt;Nunc dignissim volutpat enim, non sollicitudin purus dignissim id. Nam sit amet urna eu velit lacinia eleifend. Proin auctor rhoncus ligula nec aliquet. Donec sodales molestie lacinia. Curabitur dictum faucibus urna at convallis. Aliquam in lectus at urna rutrum porta. In lacus arcu, molestie ut vestibulum ut, rhoncus sed eros. Sed et elit vitae risus pretium consectetur vel in mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus turpis quis lectus rhoncus adipiscing. Proin pulvinar placerat suscipit. Maecenas imperdiet, quam vitae varius auctor, enim mauris vulputate sapien, nec laoreet neque diam non quam.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2020/wallbase.jpg&quot; alt=&quot;Wallbase-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Etiam luctus mauris at mi sollicitudin quis malesuada nibh porttitor. Vestibulum non dapibus magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin feugiat hendrerit viverra. Phasellus sit amet nunc mauris, eu ultricies tellus. Sed a mi tortor, eleifend varius erat. Proin consectetur molestie tortor eu gravida. Cras placerat orci id arcu tristique ut rutrum justo pulvinar. Maecenas lacinia fringilla diam non bibendum. Aenean vel viverra turpis. Integer ut leo nisi. Pellentesque vehicula quam ut sapien convallis consequat. Aliquam ut arcu purus, eget tempor purus. Integer eu tellus quis erat tristique gravida eu vel lorem.&lt;/p&gt;
+</description>
+          <pubDate>2014-11-18T17:45:20+02:00</pubDate>
+          <link>http://localhost:4000/photo/2014/11/18/gallery-post/</link>
+          <guid isPermaLink="true">http://localhost:4000/photo/2014/11/18/gallery-post/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Математические формулы - MathJax with Jekyll</title>
+          <description>&lt;p&gt;One of the rewards of switching my website to &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; is the
+ability to support &lt;strong&gt;MathJax&lt;/strong&gt;, which means I can write LaTeX-like equations that get
+nicely displayed in a web browser, like this one \( \sqrt{\frac{n!}{k!(n-k)!}} \) or
+this one \( x^2 + y^2 = r^2 \).&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;img class=&quot;centered&quot; src=&quot;https://www.mathjax.org/badge/mj-logo.svg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-mathjax&quot;&gt;What’s MathJax&lt;/h3&gt;
+
+&lt;p&gt;If you check MathJax website &lt;a href=&quot;http://www.mathjax.org/&quot;&gt;(www.mathjax.org)&lt;/a&gt; you’ll see
+that it &lt;em&gt;is an open source JavaScript display engine for mathematics that works in all
+browsers&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-implement-mathjax-with-jekyll&quot;&gt;How to implement MathJax with Jekyll&lt;/h3&gt;
+
+&lt;p&gt;I followed the instructions described by Dason Kurkiewicz for
+&lt;a href=&quot;http://dasonk.github.io/blog/2012/10/09/Using-Jekyll-and-Mathjax/&quot;&gt;using Jekyll and Mathjax&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here are some important details. I had to modify the Ruby library for Markdown in
+my &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file. Now I’m using redcarpet so the corresponding line in the
+configuration file is: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;markdown: redcarpet&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To load the MathJax javascript, I added the following lines in my layout &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.html&lt;/code&gt;
+(located in my folder &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;)&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Of course you can choose a different file location in your jekyll layouts.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-couple-of-examples&quot;&gt;A Couple of Examples&lt;/h3&gt;
+
+&lt;p&gt;Here’s a short list of examples. To know more about the details behind MathJax, you can
+always checked the provided documentation available at
+&lt;a href=&quot;http://docs.mathjax.org/en/latest/&quot;&gt;http://docs.mathjax.org/en/latest/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m assuming you are familiar with LaTeX. However, you should know that MathJax does not
+have the exactly same behavior as LaTeX. By default, the &lt;strong&gt;tex2jax&lt;/strong&gt; preprocessor defines the
+LaTeX math delimiters, which are &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\\(...\\)&lt;/code&gt; for in-line math, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\\[...\\]&lt;/code&gt; for
+displayed equations. It also defines the TeX delimiters &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$...$$&lt;/code&gt; for displayed
+equations, but it does not define &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$...$&lt;/code&gt; as in-line math delimiters. Fortunately,
+you can change these predefined specifications if you want to do so.&lt;/p&gt;
+
+&lt;p&gt;Let’s try a first example. Here’s a dummy equation:&lt;/p&gt;
+
+\[a^2 + b^2 = c^2\]
+
+&lt;p&gt;How do you write such expression? Very simple: using &lt;strong&gt;double dollar&lt;/strong&gt; signs&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;o&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$$&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;To display inline math use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\\( ... \\)&lt;/code&gt; like this &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\\( sin(x^2) \\)&lt;/code&gt; which gets
+rendered as \( sin(x^2) \)&lt;/p&gt;
+
+&lt;p&gt;Here’s another example using type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\mathsf&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;o&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mathsf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PCs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;times&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mathsf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Loadings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$$&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;which gets displayed as&lt;/p&gt;
+
+\[\mathsf{Data = PCs} \times \mathsf{Loadings}\]
+
+&lt;p&gt;Or even better:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;err&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mathbf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mathbf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mathbf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mathsf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;is displayed as&lt;/p&gt;
+
+&lt;p&gt;\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \]&lt;/p&gt;
+
+&lt;p&gt;If you want to use subscripts like this \( \mathbf{X}_{n,p} \) you need to scape the
+underscores with a backslash like so &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\mathbf{X}\_{n,p}&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;o&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mathbf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mathbf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mathbf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$$&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;will be displayed as&lt;/p&gt;
+
+&lt;p&gt;\[ \mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}_{k,p} \]&lt;/p&gt;
+</description>
+          <pubDate>2014-02-16T00:00:00+02:00</pubDate>
+          <link>http://localhost:4000/options/2014/02/16/Mathjax-with-jekyll/</link>
+          <guid isPermaLink="true">http://localhost:4000/options/2014/02/16/Mathjax-with-jekyll/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Ставим картинку - Images</title>
+          <description>&lt;p&gt;Реставрировал старый Проект (4,5 года назад сделал)&lt;br /&gt;
+Сейчас 02-00 12-10-2024&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://hexojs.github.io/hexo-theme-landscape/assets/wallpaper-2572384.jpg&quot; alt=&quot;Котик&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a image test post.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2013/zakat.jpg&quot; alt=&quot;text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2013/nebo.jpg&quot; alt=&quot;Caption&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2013/tsvetok.jpg&quot; alt=&quot;text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://placehold.it/350x150.jpg&quot; alt=&quot;Small Picture&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2013/350x150.jpg&quot; alt=&quot;Small Picture2&quot; /&gt;&lt;/p&gt;
+</description>
+          <pubDate>2013-12-27T00:46:49+02:00</pubDate>
+          <link>http://localhost:4000/2013/12/27/images/</link>
+          <guid isPermaLink="true">http://localhost:4000/2013/12/27/images/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Фича - читать дальше - Excerpts</title>
+          <description>&lt;p&gt;The following contents should be invisible in home/archive page.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget urna vitae velit eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Aliquam eleifend dolor vitae libero pharetra adipiscing. Etiam adipiscing dolor a quam tempor, eu convallis nulla varius. Aliquam sollicitudin risus a porta aliquam. Ut nec velit dolor. Proin eget leo lobortis, aliquam est sed, mollis mauris. Fusce vitae leo pretium massa accumsan condimentum. Fusce malesuada gravida lectus vel vulputate. Donec bibendum porta nibh ut aliquam.&lt;/p&gt;
+
+&lt;p&gt;Sed lorem felis, congue non fringilla eu, aliquam eu eros. Curabitur orci libero, mollis sed semper vitae, adipiscing in lectus. Aenean non egestas odio. Donec sollicitudin nisi quis lorem gravida, in pharetra mauris fringilla. Duis sit amet faucibus dolor, id aliquam neque. In egestas, odio gravida tempor dictum, mauris felis faucibus purus, sit amet commodo lacus diam vitae est. Ut ut quam eget massa semper sodales. Aenean non ipsum cursus, blandit lectus in, ornare odio. Curabitur ultrices porttitor vulputate.&lt;/p&gt;
+</description>
+          <pubDate>2013-12-25T02:23:23+02:00</pubDate>
+          <link>http://localhost:4000/2013/12/25/excerpts/</link>
+          <guid isPermaLink="true">http://localhost:4000/2013/12/25/excerpts/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Блоки - Block</title>
+          <description>&lt;p&gt;This post is used for testing tag plugins. See &lt;a href=&quot;http://zespia.tw/hexo/docs/tag-plugins.html&quot;&gt;docs&lt;/a&gt; for more info.&lt;/p&gt;
+
+&lt;h2 id=&quot;block-quote&quot;&gt;Block Quote&lt;/h2&gt;
+
+&lt;h3 id=&quot;normal-blockquote&quot;&gt;Normal blockquote&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;code-block&quot;&gt;Code Block&lt;/h2&gt;
+
+&lt;h3 id=&quot;normal-code-block&quot;&gt;Normal code block&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;alert(&apos;Hello World!&apos;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;print &quot;Hello world&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;highlight-code-block&quot;&gt;Highlight code block&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello world&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;foo&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;foo&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;!--### Gist
+
+ { % gist 996818 % } --&gt;
+</description>
+          <pubDate>2013-12-25T02:14:39+02:00</pubDate>
+          <link>http://localhost:4000/2013/12/25/block/</link>
+          <guid isPermaLink="true">http://localhost:4000/2013/12/25/block/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Тест на японском - 日本語テスト</title>
+          <description>&lt;p&gt;This is a Japanese test post.&lt;/p&gt;
+
+&lt;p&gt;私は昨日ついにその助力家というのの上よりするたなけれ。&lt;/p&gt;
+
+&lt;p&gt;最も今をお話団はちょうどこの前後なかろでくらいに困りがいるたをは帰着考えたなかって、そうにもするでうたらない。&lt;/p&gt;
+
+&lt;p&gt;がたを知っないはずも同時に九月をいよいよたありた。&lt;/p&gt;
+
+&lt;p&gt;もっと槙さんにぼんやり金少し説明にえた自分大した人私か影響にというお関係たうませないが、この次第も私か兄具合に使うて、槙さんののに当人のあなたにさぞご意味と行くて私個人が小尊敬を聴いように同時に同反抗に集っだうて、いよいよまず相当へあっうからいだ事をしでなけれ。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;それでそれでもご時日をしはずはたったいやと突き抜けるますて、その元がは行ったてという獄を尽すていけですた。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;この中道具の日その学校はあなたごろがすまなりかとネルソンさんの考えるですん、辺の事実ないというご盲従ありたですと、爺さんのためが薬缶が結果までの箸の当時してならて、多少の十月にためからそういう上からとにかくしましないと触れべきものたで、ないうですと多少お人達したのでたた。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;From &lt;a href=&quot;http://lipsum.sugutsukaeru.jp/index.cgi&quot;&gt;すぐ使えるダミーテキスト - 日本語 Lorem ipsum&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+          <pubDate>2013-12-25T01:33:26+02:00</pubDate>
+          <link>http://localhost:4000/2013/12/25/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88/</link>
+          <guid isPermaLink="true">http://localhost:4000/2013/12/25/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Тест на китайском - 中文測試</title>
+          <description>&lt;p&gt;This is a Chinese test post.&lt;/p&gt;
+
+&lt;p&gt;善我王上魚、產生資西員合兒臉趣論。畫衣生這著爸毛親可時，安程幾？合學作。觀經而作建。都非子作這！法如言子你關！手師也。&lt;/p&gt;
+
+&lt;p&gt;以也座論頭室業放。要車時地變此親不老高小是統習直麼調未，行年香一？&lt;/p&gt;
+
+&lt;p&gt;就竟在，是我童示讓利分和異種百路關母信過明驗有個歷洋中前合著區亮風值新底車有正結，進快保的行戰從：弟除文辦條國備當來際年每小腳識世可的的外的廣下歌洲保輪市果底天影；全氣具些回童但倒影發狀在示，數上學大法很，如要我……月品大供這起服滿老？應學傳者國：山式排只不之然清同關；細車是！停屋常間又，資畫領生，相們制在？公別的人寫教資夠。資再我我！只臉夫藝量不路政吃息緊回力之；兒足灣電空時局我怎初安。意今一子區首者微陸現際安除發連由子由而走學體區園我車當會，經時取頭，嚴了新科同？很夫營動通打，出和導一樂，查旅他。坐是收外子發物北看蘭戰坐車身做可來。道就學務。&lt;/p&gt;
+
+&lt;p&gt;國新故。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;工步他始能詩的，裝進分星海演意學值例道……於財型目古香亮自和這乎？化經溫詩。只賽嚴大一主價世哥受的沒有中年即病行金拉麼河。主小路了種就小為廣不？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;From &lt;a href=&quot;http://www.richyli.com/tool/loremipsum/&quot;&gt;亂數假文產生器 - Chinese Lorem Ipsum&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+          <pubDate>2013-12-25T01:31:30+02:00</pubDate>
+          <link>http://localhost:4000/2013/12/25/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6/</link>
+          <guid isPermaLink="true">http://localhost:4000/2013/12/25/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Сообщение с длинным названием - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</title>
+          <description>&lt;p&gt;This post has a long title. Make sure the title displayed right.&lt;/p&gt;
+</description>
+          <pubDate>2013-12-25T01:31:06+02:00</pubDate>
+          <link>http://localhost:4000/2013/12/25/long-title/</link>
+          <guid isPermaLink="true">http://localhost:4000/2013/12/25/long-title/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Категории</title>
+          <description>&lt;p&gt;This post contains 3 categories. Make sure your theme can display all of the categories.&lt;/p&gt;
+
+&lt;p&gt;Это сообщение, чтобы проверить работу категорий.&lt;br /&gt;
+Категории – 3 штуки.&lt;br /&gt;
+По идее, – с иерархией&lt;/p&gt;
+
+&lt;p&gt;test 23-10-2022 00:25&lt;/p&gt;
+
+</description>
+          <pubDate>2013-12-25T01:30:09+02:00</pubDate>
+          <link>http://localhost:4000/cat1/cat2/cat3/2013/12/25/categories/</link>
+          <guid isPermaLink="true">http://localhost:4000/cat1/cat2/cat3/2013/12/25/categories/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Сообщение со ссылкой - Link Post</title>
+          <description>&lt;p&gt;This is a link post. Clicking on the link should open &lt;a href=&quot;http://www.google.com/&quot;&gt;Google&lt;/a&gt; in a new tab or window.&lt;/p&gt;
+</description>
+          <pubDate>2013-12-25T01:30:04+02:00</pubDate>
+          <link>http://localhost:4000/2013/12/25/link-post/</link>
+          <guid isPermaLink="true">http://localhost:4000/2013/12/25/link-post/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Проверка тэгов - Tags</title>
+          <description>&lt;p&gt;This post contains 3 tags. Make sure your theme can display all of the tags.&lt;br /&gt;
+Проверка отображения тэгов.
+По идее здесь нет иерархии и тэги можно отображать в любой последовательности&lt;/p&gt;
+
+&lt;p&gt;Дополнено: 07-11-2023 – 19-23&lt;br /&gt;
+– Нельзя указывать тэги из двух слов, например VS Code&lt;br /&gt;
+У меня был такой тэг и не работал.&lt;br /&gt;
+Сегодня только и исправил!&lt;/p&gt;
+</description>
+          <pubDate>2013-12-25T01:29:53+02:00</pubDate>
+          <link>http://localhost:4000/2013/12/25/tags/</link>
+          <guid isPermaLink="true">http://localhost:4000/2013/12/25/tags/</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Elements Маркдауна</title>
+          <description>&lt;p&gt;The purpose of this post is to help you make sure all of HTML elements can display properly. If you use CSS reset, don’t forget to redefine the style by yourself.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;heading-1&quot;&gt;Heading 1&lt;/h1&gt;
+
+&lt;h2 id=&quot;heading-2&quot;&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3 id=&quot;heading-3&quot;&gt;Heading 3&lt;/h3&gt;
+
+&lt;h4 id=&quot;heading-4&quot;&gt;Heading 4&lt;/h4&gt;
+
+&lt;h5 id=&quot;heading-5&quot;&gt;Heading 5&lt;/h5&gt;
+
+&lt;h6 id=&quot;heading-6&quot;&gt;Heading 6&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;paragraph&quot;&gt;Paragraph&lt;/h2&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href=&quot;&quot;&gt;test link&lt;/a&gt; consectetur adipiscing elit. &lt;strong&gt;Strong text&lt;/strong&gt; pellentesque ligula commodo viverra vehicula. &lt;em&gt;Italic text&lt;/em&gt; at ullamcorper enim. Morbi a euismod nibh. &lt;u&gt;Underline text&lt;/u&gt; non elit nisl. &lt;del&gt;Deleted text&lt;/del&gt; tristique, sem id condimentum tempus, metus lectus venenatis mauris, sit amet semper lorem felis a eros. Fusce egestas nibh at sagittis auctor. Sed ultricies ac arcu quis molestie. Donec dapibus nunc in nibh egestas, vitae volutpat sem iaculis. Curabitur sem tellus, elementum nec quam id, fermentum laoreet mi. Ut mollis ullamcorper turpis, vitae facilisis velit ultricies sit amet. Etiam laoreet dui odio, id tempus justo tincidunt id. Phasellus scelerisque nunc sed nunc ultricies accumsan.&lt;/p&gt;
+
+&lt;p&gt;Interdum et malesuada fames ac ante ipsum primis in faucibus. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sed erat diam&lt;/code&gt;, blandit eget felis aliquam, rhoncus varius urna. Donec tellus sapien, sodales eget ante vitae, feugiat ullamcorper urna. Praesent auctor dui vitae dapibus eleifend. Proin viverra mollis neque, ut ullamcorper elit posuere eget.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Maecenas ornare arcu at mi suscipit, non molestie tortor ultrices. Aenean convallis, diam et congue ultricies, erat magna tincidunt orci, pulvinar posuere mi sapien ac magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent vitae placerat mauris. Nullam laoreet ante posuere tortor blandit auctor. Sed id ligula volutpat leo consequat placerat. Mauris fermentum dolor sed augue malesuada sollicitudin. Vivamus ultrices nunc felis, quis viverra orci eleifend ut. Donec et quam id urna cursus posuere. Donec elementum scelerisque laoreet.&lt;/p&gt;
+
+&lt;h2 id=&quot;list-types&quot;&gt;List Types&lt;/h2&gt;
+
+&lt;h3 id=&quot;definition-list-dl&quot;&gt;Definition List (dl)&lt;/h3&gt;
+
+&lt;dl&gt;&lt;dt&gt;Definition List Title&lt;/dt&gt;&lt;dd&gt;This is a definition list division.&lt;/dd&gt;&lt;/dl&gt;
+
+&lt;h3 id=&quot;ordered-list-ol&quot;&gt;Ordered List (ol)&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;List Item 1&lt;/li&gt;
+  &lt;li&gt;List Item 2&lt;/li&gt;
+  &lt;li&gt;List Item 3&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;unordered-list-ul&quot;&gt;Unordered List (ul)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;List Item 1&lt;/li&gt;
+  &lt;li&gt;List Item 2&lt;/li&gt;
+  &lt;li&gt;List Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;table&quot;&gt;Table&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Table Header 1&lt;/th&gt;
+      &lt;th&gt;Table Header 2&lt;/th&gt;
+      &lt;th&gt;Table Header 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Division 1&lt;/td&gt;
+      &lt;td&gt;Division 2&lt;/td&gt;
+      &lt;td&gt;Division 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Division 1&lt;/td&gt;
+      &lt;td&gt;Division 2&lt;/td&gt;
+      &lt;td&gt;Division 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Division 1&lt;/td&gt;
+      &lt;td&gt;Division 2&lt;/td&gt;
+      &lt;td&gt;Division 3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;misc-stuff---abbr-acronym-sub-sup-etc&quot;&gt;Misc Stuff - abbr, acronym, sub, sup, etc&lt;/h2&gt;
+
+&lt;p&gt;Lorem &lt;sup&gt;superscript&lt;/sup&gt; dolor &lt;sub&gt;subscript&lt;/sub&gt; amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. &lt;cite&gt;cite&lt;/cite&gt;. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. &lt;acronym title=&quot;National Basketball Association&quot;&gt;NBA&lt;/acronym&gt; Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  &lt;abbr title=&quot;Avenue&quot;&gt;AVE&lt;/abbr&gt;&lt;/p&gt;
+</description>
+          <pubDate>2013-12-25T01:29:08+02:00</pubDate>
+          <link>http://localhost:4000/2013/12/25/elements/</link>
+          <guid isPermaLink="true">http://localhost:4000/2013/12/25/elements/</guid>
+        </item>
+      
+    
+  </channel>
+</rss>

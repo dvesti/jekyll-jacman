@@ -1,0 +1,230 @@
+
+
+
+
+[
+  
+  
+    
+    
+      {
+        "title": "Elements Маркдауна",
+        "date": "2013-12-25",
+        "excerpt": "The purpose of this post is to help you make sure all of HTML elements can display properly. If you use CSS reset, don’t forget to redefine the style by yourself.\n\n",
+        
+        "url": "/2013/12/25/elements/"
+      },
+    
+      {
+        "title": "Проверка тэгов - Tags",
+        "date": "2013-12-25",
+        "excerpt": "This post contains 3 tags. Make sure your theme can display all of the tags.\nПроверка отображения тэгов.\nПо идее здесь нет иерархии и тэги можно отображать в любой последовательности\n\n",
+        
+        "url": "/2013/12/25/tags/"
+      },
+    
+      {
+        "title": "Сообщение со ссылкой - Link Post",
+        "date": "2013-12-25",
+        "excerpt": "This is a link post. Clicking on the link should open Google in a new tab or window.\n",
+        
+        "url": "/2013/12/25/link-post/"
+      },
+    
+      {
+        "title": "Категории",
+        "date": "2013-12-25",
+        "excerpt": "This post contains 3 categories. Make sure your theme can display all of the categories.\n\n",
+        
+        "url": "/cat1/cat2/cat3/2013/12/25/categories/"
+      },
+    
+      {
+        "title": "Сообщение с длинным названием - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.",
+        "date": "2013-12-25",
+        "excerpt": "This post has a long title. Make sure the title displayed right.\n",
+        
+        "url": "/2013/12/25/long-title/"
+      },
+    
+      {
+        "title": "Тест на китайском - 中文測試",
+        "date": "2013-12-25",
+        "excerpt": "This is a Chinese test post.\n\n",
+        
+        "url": "/2013/12/25/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6/"
+      },
+    
+      {
+        "title": "Тест на японском - 日本語テスト",
+        "date": "2013-12-25",
+        "excerpt": "This is a Japanese test post.\n\n",
+        
+        "url": "/2013/12/25/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88/"
+      },
+    
+      {
+        "title": "Блоки - Block",
+        "date": "2013-12-25",
+        "excerpt": "This post is used for testing tag plugins. See docs for more info.\n\n",
+        
+        "url": "/2013/12/25/block/"
+      },
+    
+      {
+        "title": "Фича - читать дальше - Excerpts",
+        "date": "2013-12-25",
+        "excerpt": "The following contents should be invisible in home/archive page.\n\n",
+        
+        "url": "/2013/12/25/excerpts/"
+      },
+    
+      {
+        "title": "Ставим картинку - Images",
+        "date": "2013-12-27",
+        "excerpt": "Реставрировал старый Проект (4,5 года назад сделал)\nСейчас 02-00 12-10-2024\n\n",
+        
+        "url": "/2013/12/27/images/"
+      },
+    
+      {
+        "title": "Математические формулы - MathJax with Jekyll",
+        "date": "2014-02-16",
+        "excerpt": "One of the rewards of switching my website to Jekyll is the\nability to support MathJax, which means I can write LaTeX-like equations that get\nnicely displayed in a web browser, like this one \\( \\sqrt{\\frac{n!}{k!(n-k)!}} \\) or\nthis one \\( x^2 + y^2 = r^2 \\).\n\n",
+        
+        "url": "/options/2014/02/16/Mathjax-with-jekyll/"
+      },
+    
+      {
+        "title": "Галерея - Gallery Post",
+        "date": "2014-11-18",
+        "excerpt": "Nunc dignissim volutpat enim, non sollicitudin purus dignissim id. Nam sit amet urna eu velit lacinia eleifend. Proin auctor rhoncus ligula nec aliquet. Donec sodales molestie lacinia. Curabitur dictum faucibus urna at convallis. Aliquam in lectus at urna rutrum porta. In lacus arcu, molestie ut vestibulum ut, rhoncus sed eros. Sed et elit vitae risus pretium consectetur vel in mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus turpis quis lectus rhoncus adipiscing. Proin pulvinar placerat suscipit. Maecenas imperdiet, quam vitae varius auctor, enim mauris vulputate sapien, nec laoreet neque diam non quam.\n\n",
+        
+        "url": "/photo/2014/11/18/gallery-post/"
+      },
+    
+      {
+        "title": "Смайлики - Emoji Test",
+        "date": "2015-09-19",
+        "excerpt": "This is an emoji test. :smile:\n\n",
+        
+        "url": "/2015/09/19/emoji-test/"
+      },
+    
+      {
+        "title": "Конфиг темы - Jekyll-Jacman - 如何使用 Jacman 主题",
+        "date": "2015-09-20",
+        "excerpt": "主题介绍\n\n",
+        
+        "url": "/jekyll/2015/09/20/how-to-use-jacman/"
+      },
+    
+      {
+        "title": "Первое сообщение блога!",
+        "date": "2018-02-19",
+        "excerpt": "Обновим своё имя и прочие настройки в файле -  _config.yml . Восклицательный (!), наверно, читать дальше. А дальше картинка\n\n",
+        
+        "url": "/jekyll/2018/02/19/Hello-World/"
+      },
+    
+      {
+        "title": "Фикс для пагинации в теме для Jekyll - jekyll-jacman",
+        "date": "2018-02-22",
+        "excerpt": "Итак, тема для Jekyll - Jekyll-Jacman\nНе работала пагинация.\nПосле того как изменил количество сообщений на страницу - вместо 20 поставил 5 - появилась пагинация, но не с правильными путями\n\nИзменения делал в файлеjekyll-jacman\\_includes\\index.html\n\n",
+        
+        "url": "/jekyll/2018/02/22/pagination-jacman/"
+      },
+    
+      {
+        "title": "Как отображать код Liquid code в статье",
+        "date": "2018-02-22",
+        "excerpt": "Писал статью.  (test-проверка: 2020-05-01)\nУказал код. Всё красиво с подцветкой, но…\nНе отобразился и вообще чепуха произошла.\nПо-гуглил. Нашёл это решение\nВ предыдущей статье получилось всё-таки сделать как надо\n\nСекрет в тэгах {%raw%} и {%endraw%}.\n\n",
+        
+        "url": "/news/2018/02/22/liquid-code-in-article/"
+      },
+    
+      {
+        "title": "Фича - Читать дальше",
+        "date": "2020-05-01",
+        "excerpt": "В этот статье отметим, где должен быть «Читать дальше».\nСделаем два абзаца и потренируемся.\nВ конце опишу результат\n\na. Просто два энтера получается «Читать дальше» в конце текста\nb. После первой строчки (параграфа) делаем два пробела – в конце\nc. После первого абзаца делаем два энтера, вставляем &lt; !--more-- &gt; и снова два энтера  в конце\n\nРешение:\n\nДобавил в шапку (там, где заголовок и дата) строчку excerpt_separator: &amp;lt;!-- more --&amp;gt; и в текстек поставил &amp;lt;!-- more --&amp;gt; там, где я хочу\n\n",
+        
+        "url": "/jekyll/2020/05/01/read-more/"
+      },
+    
+      {
+        "title": "Ещё один тест-02",
+        "date": "2020-05-02",
+        "excerpt": "\n\nВ конфиге переписал, чтобы «читать дальше» был после первого параграфа.\nНа старых это работает.\n\n",
+        
+        "url": "/news/photo/2020/05/02/test-02/"
+      },
+    
+      {
+        "title": "Мысли за неделю № 20",
+        "date": "2020-05-15",
+        "excerpt": "Целую неделю занимался не пойми чем.\nВспоминал свои старые сайты, созданные с помощью генераторов статических страниц.\n\nСайты есть, но к некоторым уже доступ получить не могу: то версии устарели, то я сам потерял навык.\nИ ещё одно: я стал использовать VS Code.\nТам вроде по интерфейсу проще: всё в одном, не так, как в Terminalе отдельном, которым я пользовался пару лет назад.\nНо в этом и проблема: обычные пересылки – Push – перестали корректно работать. Плодит кучу файлов на сервере (а чаще всего и – не туда, куда хотел).\n\n",
+        
+        "url": "/news/2020/05/15/zanjatija-nedeli/"
+      },
+    
+      {
+        "title": "Домен tallinna.ru",
+        "date": "2020-05-17",
+        "excerpt": "Прикрепил доменное имя – tallinna.ru\nБыли определённые проблемы и сделано масса ошибок.\n\nВо-первых, мой домен был прикреплён к хостингу, от которого я отказался 2 года назад.\nВо-вторых, мой регистратор изменился: все зарегистрированные домены переехали на Reg.ru. Если на Naunet я понимал, что надо делать и за 15 лет достаточно изучил админку, то на Reg.ru всё незнакомо и, я бы сказал, менее удачно, что ли. Это положение дел тоже затормозило основное дело.\n\n",
+        
+        "url": "/web/2020/05/17/domen-tallinna-ru/"
+      },
+    
+      {
+        "title": "Jekyll работает, Hugo - нет",
+        "date": "2020-05-20",
+        "excerpt": "Опять провозился со старыми репозитариями, в частности, созданными на Hugo.\nБыл сайт такой хороший, с приятной темой, но теперь, по прошествии нескольких лет бездействия, он перестал слушаться и обновляться прежними методами. Приходится репозитории на GitHub удалять и снова создавать с тем же именем, но… Всё – тоже.\n\nНесколько раз прошёл процедуру по настройке SSH. Думал, это виновато. Сейчас настроил и визуально и с пониманием дела – всё работает. Т.е. меня сначала смущали урлы репозитория. Всегда были https://, а стали git://. Понял, – связано с передачей файлов по SSH.\n\n",
+        
+        "url": "/web/2020/05/20/hugo-i-jekyll/"
+      },
+    
+      {
+        "title": "Шрифт Merriweather",
+        "date": "2020-05-21",
+        "excerpt": "Давно приглядывался к шрифту Merriweather.\nА вчера прочитал, что он – один из самых популярный в Интернете.\nПо крайней мере, на новостных сайтах и блогах. И это – справедливо: читается хорошо, выглядит приятно, как латиница, так и кириллица.\n\n",
+        
+        "url": "/jekyll/2020/05/21/Merriweather-font/"
+      },
+    
+      {
+        "title": "WSL и Chocolatey",
+        "date": "2020-05-25",
+        "excerpt": "Начинает проясняться, почему не удавалось делать деплой deploy (закидывать новые файлы на сервер) с генератором статических страниц Hugo.\n\nКак и писал раньше: я использую VS Code, а также установлена подсистема Windows для Linux (WSL).\nС Git-ом и GitHub-ом работаю через bash.exe, который стал wsl.exe.\n\n",
+        
+        "url": "/web/2020/05/25/wsl-choco/"
+      },
+    
+      {
+        "title": "JSON 2.0.2 => 2.3.1",
+        "date": "2020-07-29",
+        "excerpt": "По почте пришло извещение о нарушении безопасности на сайте с требование (просьбой) обновить gem \"json\". Да, просьбой. Помню на заброшенных репозиториях не выполнял требования, – отключили газ сайт. И – правильно.\n\nИтак, надо обновить json. Сначала сделал это вручную локально, но это – очковтирательство. Хотя это и пришлось сделать на сервере в master branch, но в профильной ветке gh-pages сделал всё по-честному: закачал обновлённые файлы, которые изменили файл Gemfile. Хотя, сдаётся мне, что его и не обязательно-то и закачивать на сервер (наверно). Столько много генераторов (GSS) испробовал и продолжаю это делать, что и в пору всё перепутать.\n\n",
+        
+        "url": "/jekyll/2020/07/29/json-231/"
+      },
+    
+  
+  
+  
+  {
+    "title": "О сайте",
+    "date": " ",
+    "excerpt": "\n",
+    
+    "url": "/about/"
+  },
+  
+  {
+    "title": "Jacman",
+    "date": " ",
+    "excerpt": "\n",
+    
+    "url": "/README_en/"
+  }
+  
+]
+
