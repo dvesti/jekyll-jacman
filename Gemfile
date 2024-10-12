@@ -8,6 +8,7 @@ gem "json", "2.6.3"
 
 #gem "jekyll", "~> 4.2.0"
 
+gem 'faraday-retry', '~> 2.2'
 
 gem "minima", "~> 2.5"
 group :jekyll_plugins do

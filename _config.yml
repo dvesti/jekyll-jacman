@@ -244,3 +244,5 @@ plugins:
  #- github-pages
  
 github: [metadata]
+
+exclude: ['*.Rmd']
