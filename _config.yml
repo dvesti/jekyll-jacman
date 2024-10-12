@@ -27,7 +27,7 @@ defaults:
 #### Pagination
 paginate: 5
 
-############################################################
+#############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
 # The values here represent the defaults if nothing is set
 #pagination:
