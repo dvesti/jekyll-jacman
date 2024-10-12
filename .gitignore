@@ -12,6 +12,7 @@ Thumbs.db
 *.lock
 .Rproj.user
 
-_site.
-jekyll-cache
+.jekyll-cache
 _environment.yml
+
+.Rproj.user/*
