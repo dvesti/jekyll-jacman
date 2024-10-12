@@ -10,6 +10,8 @@ gem "json", "2.6.3"
 
 gem 'faraday-retry', '~> 2.2'
 
+gem 'public_suffix', '>= 3.0', '< 6.0'
+
 gem "minima", "~> 2.5"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"

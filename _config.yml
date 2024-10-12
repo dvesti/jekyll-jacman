@@ -241,8 +241,10 @@ plugins:
  - jemoji
  - jekyll-paginate
  - i18n
- #- github-pages
+ - github-pages
+ - jekyll-github-metadata
  
 github: [metadata]
 
 exclude: ['*.Rmd']
+
